@@ -77,19 +77,55 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Dr. J. David Dudley & Associates — Unionville Family Dentist" },
+      {
+        name: "description",
+        content:
+          "Trusted Unionville family dental practice serving Markham since 1980. Gentle, modern dentistry. CDCP accepted. New patients welcome. Call (905) 477-5825.",
+      },
+      { name: "author", content: "Dr. J. David Dudley & Associates" },
+      { property: "og:title", content: "Dr. J. David Dudley & Associates — Unionville Family Dentist" },
+      { property: "og:description", content: "Trusted family dentistry in Unionville since 1980. CDCP accepted. New patients welcome." },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap",
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Dentist",
+          name: "Dr. J. David Dudley & Associates",
+          image: "https://www.unionvilledental.com/s/misc/logo.png",
+          telephone: "+1-905-477-5825",
+          email: "drdudley@bellnet.ca",
+          priceRange: "$$",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "4359 Highway 7",
+            addressLocality: "Unionville",
+            addressRegion: "ON",
+            postalCode: "L3R 1M1",
+            addressCountry: "CA",
+          },
+          openingHoursSpecification: [
+            { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday"], opens: "08:00", closes: "19:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: ["Wednesday", "Thursday"], opens: "08:00", closes: "17:00" },
+            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "07:30", closes: "13:00" },
+          ],
+          areaServed: ["Unionville", "Markham", "Ontario"],
+          description:
+            "Family and cosmetic dentistry in Unionville since 1980. Accepting the Canadian Dental Care Program (CDCP). New patients welcome.",
+        }),
       },
     ],
   }),
@@ -118,8 +154,11 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <SiteHeader />
+      <main>
+        <Outlet />
+      </main>
+      <SiteFooter />
     </QueryClientProvider>
   );
 }
