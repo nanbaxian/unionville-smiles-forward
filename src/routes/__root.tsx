@@ -86,8 +86,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Trusted Unionville family dental practice serving Markham since 1980. Gentle, modern dentistry. CDCP accepted. New patients welcome. Call (905) 477-5825.",
       },
       { name: "author", content: "Dr. J. David Dudley & Associates" },
-      { property: "og:title", content: "Dr. J. David Dudley & Associates — Unionville Family Dentist" },
-      { property: "og:description", content: "Trusted family dentistry in Unionville since 1980. CDCP accepted. New patients welcome." },
+      {
+        property: "og:title",
+        content: "Dr. J. David Dudley & Associates — Unionville Family Dentist",
+      },
+      {
+        property: "og:description",
+        content:
+          "Trusted family dentistry in Unionville since 1980. CDCP accepted. New patients welcome.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -97,7 +104,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap",
       },
     ],
     scripts: [
@@ -120,9 +127,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             addressCountry: "CA",
           },
           openingHoursSpecification: [
-            { "@type": "OpeningHoursSpecification", dayOfWeek: ["Monday", "Tuesday"], opens: "08:00", closes: "19:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: ["Wednesday", "Thursday"], opens: "08:00", closes: "17:00" },
-            { "@type": "OpeningHoursSpecification", dayOfWeek: "Friday", opens: "07:30", closes: "13:00" },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Monday", "Tuesday"],
+              opens: "08:00",
+              closes: "19:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: ["Wednesday", "Thursday"],
+              opens: "08:00",
+              closes: "17:00",
+            },
+            {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: "Friday",
+              opens: "07:30",
+              closes: "13:00",
+            },
           ],
           areaServed: ["Unionville", "Markham", "Ontario"],
           description:
