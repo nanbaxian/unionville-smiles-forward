@@ -1,14 +1,21 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Section";
-import teamImg from "@/assets/team.jpg";
+import teamImg from "@/assets/unionvilledental/4112594913.webp";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
     meta: [
       { title: "Our Team — Dr. J. David Dudley & Associates" },
-      { name: "description", content: "Meet Dr. David Dudley, Dr. Meling Lee, and the dedicated hygienists and assistants of our Unionville dental team." },
+      {
+        name: "description",
+        content:
+          "Meet Dr. David Dudley, Dr. Meling Lee, and the dedicated hygienists and assistants of our Unionville dental team.",
+      },
       { property: "og:title", content: "Our Team — Dr. J. David Dudley & Associates" },
-      { property: "og:description", content: "Meet the dentists and hygienists of our Unionville dental team." },
+      {
+        property: "og:description",
+        content: "Meet the dentists and hygienists of our Unionville dental team.",
+      },
     ],
   }),
   component: Team,
@@ -54,13 +61,25 @@ function Team() {
       </section>
 
       <section className="container-prose mt-24">
-        <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">Hygienists & assistants</div>
-        <h2 className="mt-3 font-display text-4xl md:text-5xl tracking-tight">A few of our dedicated dental team members.</h2>
+        <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+          Hygienists & assistants
+        </div>
+        <h2 className="mt-3 font-display text-4xl md:text-5xl tracking-tight">
+          A few of our dedicated dental team members.
+        </h2>
         <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
-          Our hygienists — Alison, Sheryl, Shannon — and certified dental assistants like Shamilee are the
-          friendly faces you'll see most often. Many have been with the practice for over a decade.
+          Our hygienists — Alison, Sheryl, Shannon — and certified dental assistants like Shamilee
+          are the friendly faces you'll see most often. Many have been with the practice for over a
+          decade.
         </p>
-        <img src={teamImg} alt="The Dudley & Associates team in clinic" width={1600} height={1100} loading="lazy" className="mt-10 rounded-3xl w-full aspect-[16/9] object-cover" />
+        <img
+          src={teamImg}
+          alt="The Dudley & Associates team in clinic"
+          width={1600}
+          height={1100}
+          loading="lazy"
+          className="mt-10 rounded-3xl w-full aspect-[16/9] object-cover"
+        />
       </section>
     </>
   );

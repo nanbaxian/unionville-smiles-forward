@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
+import logoImg from "@/assets/unionvilledental/logo.webp";
 
 const nav = [
   { to: "/about", label: "About" },
@@ -18,20 +19,30 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="container-prose flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
-          <span className="grid h-9 w-9 place-items-center rounded-full bg-primary text-primary-foreground font-display text-lg">D</span>
-          <span className="font-display text-xl tracking-tight text-foreground">
-            Dudley<span className="text-muted-foreground"> &amp; Associates</span>
-          </span>
+          <img
+            src={logoImg}
+            alt="Unionville Dental, Dr. Dudley & Associates"
+            width={142}
+            height={120}
+            className="h-12 w-auto"
+          />
         </Link>
         <nav className="hidden lg:flex items-center gap-7 text-sm text-muted-foreground">
           {nav.map((n) => (
-            <Link key={n.to} to={n.to} className="hover:text-foreground transition-colors [&.active]:text-foreground">
+            <Link
+              key={n.to}
+              to={n.to}
+              className="hover:text-foreground transition-colors [&.active]:text-foreground"
+            >
               {n.label}
             </Link>
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a href="tel:9054775825" className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary">
+          <a
+            href="tel:9054775825"
+            className="hidden sm:inline-flex items-center gap-2 text-sm font-medium text-foreground hover:text-primary"
+          >
             <Phone className="h-4 w-4" /> (905) 477-5825
           </a>
           <Link
@@ -62,7 +73,9 @@ export function SiteHeader() {
                 {n.label}
               </Link>
             ))}
-            <a href="tel:9054775825" className="py-2 text-base font-medium">(905) 477-5825</a>
+            <a href="tel:9054775825" className="py-2 text-base font-medium">
+              (905) 477-5825
+            </a>
           </nav>
         </div>
       )}

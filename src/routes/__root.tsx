@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import logoImg from "@/assets/unionvilledental/logo.webp";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
@@ -114,7 +115,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "@context": "https://schema.org",
           "@type": "Dentist",
           name: "Dr. J. David Dudley & Associates",
-          image: "https://www.unionvilledental.com/s/misc/logo.png",
+          image: logoImg,
           telephone: "+1-905-477-5825",
           email: "drdudley@bellnet.ca",
           priceRange: "$$",
