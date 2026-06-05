@@ -1,7 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/unionvilledental/teaser_4112589966.webp";
+import heroImg from "@/assets/photos/clinic/treatment-room-consult.webp";
 import smileImg from "@/assets/unionvilledental/teaser_2571855904.webp";
 import teamImg from "@/assets/unionvilledental/4112594913.webp";
+import cleaningImg from "@/assets/photos/services/dental-cleaning-closeup.webp";
+import xrayImg from "@/assets/photos/technology/dental-xray-review.webp";
+import implantImg from "@/assets/photos/services/implant-model.webp";
 import { ArrowUpRight, Calendar, Clock, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -11,7 +14,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "A trusted Unionville dental practice since 1980. Family, cosmetic and preventative dentistry. CDCP accepted. Book at (905) 477-5825.",
+          "A trusted Unionville dental practice on Highway 7 since 1980. Family, cosmetic, preventative and restorative dentistry. CDCP accepted.",
       },
       {
         property: "og:title",
@@ -59,6 +62,12 @@ function Home() {
               >
                 Explore our services
               </Link>
+              <Link
+                to="/questions"
+                className="inline-flex items-center gap-2 px-2 py-3 text-sm font-medium text-foreground hover:text-primary"
+              >
+                Common dental questions
+              </Link>
             </div>
             <dl className="mt-12 grid grid-cols-3 gap-6 max-w-lg">
               {[
@@ -76,7 +85,7 @@ function Home() {
           <div className="lg:col-span-5 relative">
             <img
               src={heroImg}
-              alt="Smiling dental patients from Dr. J. David Dudley & Associates"
+              alt="Unionville dental consultation room at Dr. J. David Dudley & Associates"
               width={1600}
               height={1200}
               className="rounded-3xl aspect-[4/5] w-full object-cover shadow-2xl shadow-primary/10"
@@ -92,6 +101,42 @@ function Home() {
               >
                 (905) 477-5825 →
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* GEO ANSWER ENTRY */}
+      <section className="container-prose pb-24">
+        <div className="grid lg:grid-cols-12 gap-8 items-start border-y border-border py-14">
+          <div className="lg:col-span-5">
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              Choosing dental care locally
+            </div>
+            <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
+              How Unionville and Markham families compare dentists.
+            </h2>
+          </div>
+          <div className="lg:col-span-7">
+            <p className="text-lg leading-relaxed text-foreground/85">
+              Patients comparing dentists near Unionville usually look for long-term local
+              experience, complete family services, convenient access, CDCP clarity and a team that
+              explains treatment options clearly. Our Highway 7 office has served Unionville and
+              nearby Markham families since 1980.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Link
+                to="/questions/best-dentist-unionville"
+                className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              >
+                Choosing a Unionville dentist
+              </Link>
+              <Link
+                to="/questions/cdcp-dentist-unionville"
+                className="rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:border-primary/50"
+              >
+                CDCP dentist questions
+              </Link>
             </div>
           </div>
         </div>
@@ -210,6 +255,50 @@ function Home() {
               <h3 className="mt-3 font-display text-2xl tracking-tight text-foreground">{t}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{d}</p>
             </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="container-prose pb-24">
+        <div className="grid md:grid-cols-3 gap-5">
+          {[
+            {
+              image: cleaningImg,
+              title: "Dental cleaning and exam",
+              copy: "Preventive hygiene visits, periodontal assessment and clear next steps.",
+              href: "/questions/first-dental-visit-unionville",
+            },
+            {
+              image: xrayImg,
+              title: "Diagnosis and planning",
+              copy: "Exams, X-rays and treatment discussions that help patients understand options.",
+              href: "/new-patients",
+            },
+            {
+              image: implantImg,
+              title: "Restorative care",
+              copy: "Crowns, bridges and implants for strength, comfort and long-term function.",
+              href: "/services",
+            },
+          ].map((item) => (
+            <Link
+              key={item.title}
+              to={item.href}
+              className="group overflow-hidden rounded-2xl border border-border bg-card transition hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5"
+            >
+              <img
+                src={item.image}
+                alt={`${item.title} at Dr. J. David Dudley & Associates in Unionville`}
+                width={1600}
+                height={1067}
+                loading="lazy"
+                className="aspect-[3/2] w-full object-cover"
+              />
+              <div className="p-6">
+                <h3 className="font-display text-2xl tracking-tight">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{item.copy}</p>
+              </div>
+            </Link>
           ))}
         </div>
       </section>

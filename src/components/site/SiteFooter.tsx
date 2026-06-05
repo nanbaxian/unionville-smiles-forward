@@ -29,6 +29,9 @@ export function SiteFooter() {
           <Link to="/services" className="block hover:opacity-100 opacity-80">
             Services
           </Link>
+          <Link to="/questions" className="block hover:opacity-100 opacity-80">
+            Questions
+          </Link>
           <Link to="/cdcp" className="block hover:opacity-100 opacity-80">
             CDCP
           </Link>
