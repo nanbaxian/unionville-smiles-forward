@@ -1,0 +1,13 @@
+name = "unionville-smiles-forward"
+type = "javascript"
+compatibility_date = "2024-12-01"
+
+[build]
+command = "npm run build"
+cwd = "./"
+root = ".output/public"
+
+[env.production]
+
+[triggers]
+crons = []
