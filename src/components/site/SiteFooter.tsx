@@ -4,7 +4,7 @@ import logoImg142 from "@/assets/unionvilledental/logo-142.webp";
 
 export function SiteFooter() {
   return (
-    <footer className="mt-32 border-t border-border bg-[oklch(0.22_0.03_200)] text-[oklch(0.92_0.02_85)]">
+    <footer className="border-t border-border bg-[oklch(0.22_0.03_200)] text-[oklch(0.92_0.02_85)]">
       <div className="container-prose py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <img
