@@ -76,7 +76,7 @@ export function QuestionPage({ item }: { item: QaItem }) {
                   href="#related-questions"
                   className="block text-muted-foreground hover:text-primary"
                 >
-                  Related questions
+                  Common questions
                 </a>
               </nav>
             </aside>
@@ -132,7 +132,7 @@ export function QuestionPage({ item }: { item: QaItem }) {
               ))}
 
               <section id="related-questions">
-                <h2 className="font-display text-3xl tracking-tight">Related questions</h2>
+                <h2 className="font-display text-3xl tracking-tight">Common questions</h2>
                 <div className="mt-5 divide-y divide-border border-y border-border">
                   {item.faqs.map((faq) => (
                     <article key={faq.question} className="py-5">
@@ -146,9 +146,7 @@ export function QuestionPage({ item }: { item: QaItem }) {
               </section>
 
               <section className="rounded-lg bg-primary p-7 text-primary-foreground">
-                <h2 className="font-display text-3xl tracking-tight">
-                  Talk with the Unionville office
-                </h2>
+                <h2 className="font-display text-3xl tracking-tight">{item.ctaHeading}</h2>
                 <p className="mt-3 max-w-2xl leading-relaxed opacity-85">{item.cta}</p>
                 <div className="mt-6 flex flex-wrap gap-3">
                   <a

@@ -187,8 +187,8 @@ function Home() {
             We take time to explain your options.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            We use current dental techniques and take time to explain diagnosis, treatment options
-            and home-care recommendations.
+            Before treatment begins, we explain what we see, what your options are, and what to
+            expect next.
           </p>
           <div className="mt-8 grid sm:grid-cols-2 gap-5 max-w-2xl">
             {[
@@ -220,7 +220,7 @@ function Home() {
               What we do
             </div>
             <h2 className="mt-3 font-display text-4xl md:text-5xl tracking-tight">
-              A full range of gentle treatments.
+              Dental care for children, adults and seniors.
             </h2>
           </div>
           <Link

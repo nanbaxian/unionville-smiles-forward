@@ -109,12 +109,11 @@ function Services() {
             Choosing the right service
           </div>
           <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
-            Start with the problem you want to solve.
+            Not sure what type of appointment you need?
           </h2>
           <p className="mt-5 text-muted-foreground leading-relaxed">
-            Unionville patients often ask whether they need a cleaning, examination, cosmetic
-            consultation, orthodontic advice or restorative treatment. The best first step is a
-            clear exam and a treatment plan that explains timing, options and priorities.
+            Call us and we can help you book the right visit. Some patients need a cleaning and
+            exam; others need a cosmetic, orthodontic or restorative consultation.
           </p>
         </div>
         <div className="lg:col-span-7 grid sm:grid-cols-2 gap-4">

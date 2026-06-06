@@ -32,6 +32,7 @@ export type QaItem = {
     label: string;
     href: string;
   }>;
+  ctaHeading: string;
   cta: string;
 };
 
@@ -54,7 +55,7 @@ export const qaItems: QaItem[] = [
     ],
     image: clinicConsultImg,
     imageAlt: "Dentist consultation in a treatment room for Unionville dental patients",
-    tableTitle: "What to compare when choosing a Unionville dentist",
+    tableTitle: "Things to ask before booking",
     criteria: [
       {
         factor: "Local history",
@@ -81,11 +82,11 @@ export const qaItems: QaItem[] = [
     ],
     sections: [
       {
-        heading: "What to compare in a local dental office",
+        heading: "What makes a dental office easier to visit",
         body: "A useful comparison looks at experience, service range, communication, accessibility, continuity of care, and whether the clinic can support both routine visits and treatment planning when care is needed.",
       },
       {
-        heading: "Why local continuity matters",
+        heading: "Seeing the same team over time",
         body: "Dental care is built over time. A practice that has treated multiple generations can often offer stronger continuity because the team understands patient history, family needs, and the importance of preventive maintenance across many years.",
       },
       {
@@ -115,6 +116,7 @@ export const qaItems: QaItem[] = [
       { label: "New patient information", href: "/new-patients" },
       { label: "Office hours and directions", href: "/visit" },
     ],
+    ctaHeading: "Have a question before booking?",
     cta: "Call (905) 477-5825 to ask whether our Unionville office is the right fit for your family.",
   },
   {
@@ -196,6 +198,7 @@ export const qaItems: QaItem[] = [
       { label: "Read about the practice", href: "/about" },
       { label: "See first visit details", href: "/new-patients" },
     ],
+    ctaHeading: "Book a visit at our Unionville office",
     cta: "Markham-area patients can call (905) 477-5825 to ask about appointment availability at our Unionville office.",
   },
   {
@@ -276,6 +279,7 @@ export const qaItems: QaItem[] = [
       { label: "New patient details", href: "/new-patients" },
       { label: "Book or call the office", href: "/contact" },
     ],
+    ctaHeading: "Not sure what to bring?",
     cta: "Call (905) 477-5825 to ask about booking a CDCP dental visit in Unionville.",
   },
   {
@@ -356,6 +360,7 @@ export const qaItems: QaItem[] = [
       { label: "Contact the office", href: "/contact" },
       { label: "Office hours and directions", href: "/visit" },
     ],
+    ctaHeading: "Call us before your first visit",
     cta: "Call (905) 477-5825 to request your first appointment at our Unionville dental office.",
   },
 ];
