@@ -9,6 +9,7 @@ import xrayImg from "@/assets/photos/technology/dental-xray-review.webp";
 import implantImg from "@/assets/photos/services/implant-model.webp";
 import { ArrowUpRight, Calendar, Clock, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 import { PracticeAddressLink } from "@/components/site/AddressLink";
+import { breadcrumbSchema, faqPageSchema, ldJsonScript } from "@/lib/schema";
 
 const homeFaqs = [
   {
@@ -64,18 +65,10 @@ export const Route = createFileRoute("/")({
     scripts: [
       {
         type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: homeFaqs.map((faq) => ({
-            "@type": "Question",
-            name: faq.question,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: faq.answer,
-            },
-          })),
-        }),
+        ...ldJsonScript(faqPageSchema(homeFaqs, "/")),
+      },
+      {
+        ...ldJsonScript(breadcrumbSchema([{ name: "Home", path: "/" }])),
       },
     ],
   }),

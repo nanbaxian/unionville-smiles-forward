@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { qaCategories, qaItems } from "@/lib/qa-content";
+import { breadcrumbSchema, faqPageSchema, itemListSchema, ldJsonScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/questions/")({
   head: () => ({
@@ -19,20 +20,31 @@ export const Route = createFileRoute("/questions/")({
       },
     ],
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          name: "Dental questions answered by Dr. J. David Dudley & Associates",
-          itemListElement: qaItems.map((item, index) => ({
-            "@type": "ListItem",
-            position: index + 1,
+      ldJsonScript(
+        itemListSchema(
+          "Dental questions answered by Dr. J. David Dudley & Associates",
+          qaItems.map((item) => ({
             name: item.shortQuestion,
-            url: `/questions/${item.slug}`,
+            path: `/questions/${item.slug}`,
           })),
-        }),
-      },
+          "/questions",
+        ),
+      ),
+      ldJsonScript(
+        faqPageSchema(
+          qaItems.map((item) => ({
+            question: item.shortQuestion,
+            answer: item.directAnswer,
+          })),
+          "/questions",
+        ),
+      ),
+      ldJsonScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Questions", path: "/questions" },
+        ]),
+      ),
     ],
   }),
   component: Questions,

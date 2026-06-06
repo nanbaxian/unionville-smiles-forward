@@ -1,5 +1,23 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Section";
+import { breadcrumbSchema, faqPageSchema, ldJsonScript } from "@/lib/schema";
+
+const cdcpFaqs = [
+  {
+    question: "Do you accept the Canadian Dental Care Program (CDCP)?",
+    answer: "Yes. Dr. J. David Dudley & Associates accepts CDCP coverage at our Unionville office.",
+  },
+  {
+    question: "What should I bring to a CDCP dental appointment?",
+    answer:
+      "Please bring your CDCP coverage information, government ID, and any private insurance information you may have.",
+  },
+  {
+    question: "Does CDCP cover everything?",
+    answer:
+      "Coverage depends on your eligibility, the treatment needed, and CDCP rules. The office can help you understand what may be covered before treatment begins.",
+  },
+];
 
 export const Route = createFileRoute("/cdcp")({
   head: () => ({
@@ -21,37 +39,15 @@ export const Route = createFileRoute("/cdcp")({
     ],
     scripts: [
       {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          mainEntity: [
-            {
-              "@type": "Question",
-              name: "Do you accept the Canadian Dental Care Program (CDCP)?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Yes. Dr. J. David Dudley & Associates accepts CDCP coverage at our Unionville office.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "What should I bring to a CDCP dental appointment?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Please bring your CDCP coverage information, government ID, and any private insurance information you may have.",
-              },
-            },
-            {
-              "@type": "Question",
-              name: "Does CDCP cover everything?",
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: "Coverage depends on your eligibility, the treatment needed, and CDCP rules. The office can help you understand what may be covered before treatment begins.",
-              },
-            },
-          ],
-        }),
+        ...ldJsonScript(faqPageSchema(cdcpFaqs, "/cdcp")),
+      },
+      {
+        ...ldJsonScript(
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "CDCP", path: "/cdcp" },
+          ]),
+        ),
       },
     ],
   }),

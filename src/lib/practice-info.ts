@@ -9,6 +9,10 @@ export const PRACTICE_ADDRESS = {
 
 export const PRACTICE_ADDRESS_TEXT = "4359 Highway #7, Unionville, ON L3R 1M1";
 
+export const SITE_URL = "https://dental.flashcoding.ca";
+
+export const PRACTICE_NAME = "Dr. J. David Dudley & Associates";
+
 export const PRACTICE_MAPS_URL =
   "https://www.google.com/maps/search/?api=1&query=4359+Highway+7+Unionville+ON+L3R+1M1";
 

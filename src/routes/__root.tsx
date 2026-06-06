@@ -10,10 +10,9 @@ import {
 import { type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import logoImg from "@/assets/unionvilledental/logo.webp";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
-import { OFFICIAL_LINKS, PRACTICE_ADDRESS, PRACTICE_MAPS_URL } from "@/lib/practice-info";
+import { ldJsonScript, practiceSchema } from "@/lib/schema";
 
 function NotFoundComponent() {
   return (
@@ -97,58 +96,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [{ rel: "stylesheet", href: appCss }],
-    scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Dentist",
-          "@id": "https://www.unionvilledental.com/#dentist",
-          name: "Dr. J. David Dudley & Associates",
-          url: "https://www.unionvilledental.com/",
-          image: logoImg,
-          telephone: "+1-905-477-5825",
-          email: "drdudley@bellnet.ca",
-          priceRange: "$$",
-          paymentAccepted: ["Cash", "Debit Card", "Mastercard", "Visa", "CDCP"],
-          knowsLanguage: ["English", "Chinese", "French"],
-          medicalSpecialty: "Dentistry",
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: PRACTICE_ADDRESS.streetSchema,
-            addressLocality: PRACTICE_ADDRESS.locality,
-            addressRegion: PRACTICE_ADDRESS.region,
-            postalCode: PRACTICE_ADDRESS.postalCode,
-            addressCountry: "CA",
-          },
-          hasMap: PRACTICE_MAPS_URL,
-          openingHoursSpecification: [
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: ["Monday", "Tuesday"],
-              opens: "08:00",
-              closes: "19:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: ["Wednesday", "Thursday"],
-              opens: "08:00",
-              closes: "17:00",
-            },
-            {
-              "@type": "OpeningHoursSpecification",
-              dayOfWeek: "Friday",
-              opens: "07:30",
-              closes: "13:00",
-            },
-          ],
-          areaServed: ["Unionville", "Markham", "Ontario"],
-          sameAs: ["https://www.unionvilledental.com/", OFFICIAL_LINKS.rcdso, OFFICIAL_LINKS.cdcp],
-          description:
-            "Family and cosmetic dentistry in Unionville since 1980. Accepting the Canadian Dental Care Program (CDCP). New patients welcome.",
-        }),
-      },
-    ],
+    scripts: [ldJsonScript(practiceSchema())],
   }),
   shellComponent: RootShell,
   component: RootComponent,

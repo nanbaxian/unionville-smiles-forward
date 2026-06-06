@@ -2,6 +2,7 @@ import clinicConsultImg from "@/assets/photos/clinic/treatment-room-consult.webp
 import firstVisitImg from "@/assets/photos/technology/dental-xray-review.webp";
 import markhamImg from "@/assets/photos/patients/natural-smile-profile.webp";
 import cdcpImg from "@/assets/photos/patients/warm-smile-closeup.webp";
+import { faqPageSchema } from "@/lib/schema";
 
 export type QaItem = {
   slug: string;
@@ -373,16 +374,5 @@ export const qaBySlug = Object.fromEntries(qaItems.map((item) => [item.slug, ite
 export const qaCategories = Array.from(new Set(qaItems.map((item) => item.category)));
 
 export function questionSchema(item: QaItem) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: item.faqs.map((faq) => ({
-      "@type": "Question",
-      name: faq.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: faq.answer,
-      },
-    })),
-  };
+  return faqPageSchema(item.faqs, `/questions/${item.slug}`);
 }

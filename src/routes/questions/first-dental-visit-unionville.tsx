@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { QuestionPage } from "@/components/site/QuestionPage";
 import { qaBySlug, questionSchema } from "@/lib/qa-content";
+import { breadcrumbSchema, ldJsonScript } from "@/lib/schema";
 
 const item = qaBySlug["first-dental-visit-unionville"];
 
@@ -12,7 +13,16 @@ export const Route = createFileRoute("/questions/first-dental-visit-unionville")
       { property: "og:title", content: item.metaTitle },
       { property: "og:description", content: item.metaDescription },
     ],
-    scripts: [{ type: "application/ld+json", children: JSON.stringify(questionSchema(item)) }],
+    scripts: [
+      ldJsonScript(questionSchema(item)),
+      ldJsonScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Questions", path: "/questions" },
+          { name: item.shortQuestion, path: `/questions/${item.slug}` },
+        ]),
+      ),
+    ],
   }),
   component: () => <QuestionPage item={item} />,
 });
