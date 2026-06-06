@@ -102,11 +102,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "Dentist",
+          "@id": "https://www.unionvilledental.com/#dentist",
           name: "Dr. J. David Dudley & Associates",
+          url: "https://www.unionvilledental.com/",
           image: logoImg,
           telephone: "+1-905-477-5825",
           email: "drdudley@bellnet.ca",
           priceRange: "$$",
+          paymentAccepted: ["Cash", "Debit Card", "Mastercard", "Visa", "CDCP"],
           address: {
             "@type": "PostalAddress",
             streetAddress: "4359 Highway 7",
@@ -115,6 +118,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             postalCode: "L3R 1M1",
             addressCountry: "CA",
           },
+          hasMap:
+            "https://www.google.com/maps/search/?api=1&query=4359+Highway+7+Unionville+ON+L3R+1M1",
           openingHoursSpecification: [
             {
               "@type": "OpeningHoursSpecification",
@@ -136,6 +141,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
           ],
           areaServed: ["Unionville", "Markham", "Ontario"],
+          sameAs: ["https://www.unionvilledental.com/"],
           description:
             "Family and cosmetic dentistry in Unionville since 1980. Accepting the Canadian Dental Care Program (CDCP). New patients welcome.",
         }),

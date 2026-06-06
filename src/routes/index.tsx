@@ -42,10 +42,11 @@ function Home() {
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--clay)]" /> On Highway 7 since 1980
             </div>
             <h1 className="mt-6 max-w-[12ch] sm:max-w-[14ch] md:max-w-[15ch] lg:max-w-[16ch] xl:max-w-[17ch] font-display text-[2.7rem] leading-[1.02] sm:text-[4.1rem] md:text-[4.7rem] lg:text-[4.05rem] lg:leading-[1.03] xl:text-[4.85rem] tracking-tight text-foreground">
-              Dental care for every generation.
+              Family dentistry in Unionville for long-term oral health.
             </h1>
             <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Preventive, restorative and cosmetic visits with Dr. J. David Dudley & Associates.
+              Preventive, restorative, and cosmetic care for children, adults, and seniors
+              with Dr. J. David Dudley & Associates.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-x-3 gap-y-2">
               <Link

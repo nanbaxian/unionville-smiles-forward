@@ -37,6 +37,12 @@ export function SiteFooter() {
           <Link to="/cdcp" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
             CDCP
           </Link>
+          <Link to="/privacy" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
+            Privacy
+          </Link>
+          <Link to="/accessibility" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
+            Accessibility
+          </Link>
         </div>
         <div className="text-sm space-y-2">
           <div className="uppercase tracking-widest text-xs opacity-60 mb-3">Visit</div>

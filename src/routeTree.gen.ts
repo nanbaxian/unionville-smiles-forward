@@ -14,9 +14,11 @@ import { Route as TeamRouteImport } from './routes/team'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as QuestionsRouteImport } from './routes/questions'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as NewPatientsRouteImport } from './routes/new-patients'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CdcpRouteImport } from './routes/cdcp'
+import { Route as AccessibilityRouteImport } from './routes/accessibility'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as QuestionsIndexRouteImport } from './routes/questions.index'
@@ -50,6 +52,11 @@ const QuestionsRoute = QuestionsRouteImport.update({
   path: '/questions',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewPatientsRoute = NewPatientsRouteImport.update({
   id: '/new-patients',
   path: '/new-patients',
@@ -63,6 +70,11 @@ const ContactRoute = ContactRouteImport.update({
 const CdcpRoute = CdcpRouteImport.update({
   id: '/cdcp',
   path: '/cdcp',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AccessibilityRoute = AccessibilityRouteImport.update({
+  id: '/accessibility',
+  path: '/accessibility',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -108,9 +120,11 @@ const QuestionsCdcpDentistUnionvilleRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/cdcp': typeof CdcpRoute
   '/contact': typeof ContactRoute
   '/new-patients': typeof NewPatientsRoute
+  '/privacy': typeof PrivacyRoute
   '/questions': typeof QuestionsRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -125,9 +139,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/cdcp': typeof CdcpRoute
   '/contact': typeof ContactRoute
   '/new-patients': typeof NewPatientsRoute
+  '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
@@ -142,9 +158,11 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/accessibility': typeof AccessibilityRoute
   '/cdcp': typeof CdcpRoute
   '/contact': typeof ContactRoute
   '/new-patients': typeof NewPatientsRoute
+  '/privacy': typeof PrivacyRoute
   '/questions': typeof QuestionsRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -161,9 +179,11 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/accessibility'
     | '/cdcp'
     | '/contact'
     | '/new-patients'
+    | '/privacy'
     | '/questions'
     | '/services'
     | '/sitemap.xml'
@@ -178,9 +198,11 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/accessibility'
     | '/cdcp'
     | '/contact'
     | '/new-patients'
+    | '/privacy'
     | '/services'
     | '/sitemap.xml'
     | '/team'
@@ -194,9 +216,11 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/accessibility'
     | '/cdcp'
     | '/contact'
     | '/new-patients'
+    | '/privacy'
     | '/questions'
     | '/services'
     | '/sitemap.xml'
@@ -212,9 +236,11 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AccessibilityRoute: typeof AccessibilityRoute
   CdcpRoute: typeof CdcpRoute
   ContactRoute: typeof ContactRoute
   NewPatientsRoute: typeof NewPatientsRoute
+  PrivacyRoute: typeof PrivacyRoute
   QuestionsRoute: typeof QuestionsRouteWithChildren
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -259,6 +285,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuestionsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/new-patients': {
       id: '/new-patients'
       path: '/new-patients'
@@ -278,6 +311,13 @@ declare module '@tanstack/react-router' {
       path: '/cdcp'
       fullPath: '/cdcp'
       preLoaderRoute: typeof CdcpRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/accessibility': {
+      id: '/accessibility'
+      path: '/accessibility'
+      fullPath: '/accessibility'
+      preLoaderRoute: typeof AccessibilityRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -357,9 +397,11 @@ const QuestionsRouteWithChildren = QuestionsRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AccessibilityRoute: AccessibilityRoute,
   CdcpRoute: CdcpRoute,
   ContactRoute: ContactRoute,
   NewPatientsRoute: NewPatientsRoute,
+  PrivacyRoute: PrivacyRoute,
   QuestionsRoute: QuestionsRouteWithChildren,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,

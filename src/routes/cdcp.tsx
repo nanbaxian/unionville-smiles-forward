@@ -111,7 +111,8 @@ function CDCP() {
           <h3 className="font-medium text-foreground">Does CDCP cover everything?</h3>
           <p className="mt-1">
             Coverage depends on your eligibility, the treatment needed, and CDCP rules. We can help
-            you understand what may be covered before treatment begins.
+            you understand what may be covered before treatment begins. The Government of Canada
+            publishes current CDCP coverage information on Canada.ca.
           </p>
         </div>
         <div>
@@ -129,11 +130,36 @@ function CDCP() {
             for eligibility and enrolment details.
           </p>
         </div>
+        <div>
+          <h3 className="font-medium text-foreground">Where can I check official CDCP rules?</h3>
+          <p className="mt-1">
+            Use the Government of Canada pages for{" "}
+            <a
+              className="text-primary underline underline-offset-2"
+              href="https://www.canada.ca/en/services/benefits/dental/dental-care-plan.html"
+              target="_blank"
+              rel="noopener"
+            >
+              Canadian Dental Care Plan information
+            </a>{" "}
+            and{" "}
+            <a
+              className="text-primary underline underline-offset-2"
+              href="https://www.canada.ca/en/services/benefits/dental/dental-care-plan/coverage.html"
+              target="_blank"
+              rel="noopener"
+            >
+              CDCP coverage details
+            </a>
+            . Program rules can change, so official Canada.ca pages should be treated as the source
+            of truth.
+          </p>
+        </div>
       </section>
 
       <section className="container-prose mt-16">
         <a
-          href="https://www.canada.ca/en/services/benefits/dental.html"
+          href="https://www.canada.ca/en/services/benefits/dental/dental-care-plan.html"
           target="_blank"
           rel="noopener"
           className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
