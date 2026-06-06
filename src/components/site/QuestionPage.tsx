@@ -76,7 +76,7 @@ export function QuestionPage({ item }: { item: QaItem }) {
                   href="#related-questions"
                   className="block text-muted-foreground hover:text-primary"
                 >
-                  Common questions
+                  Questions patients often ask
                 </a>
               </nav>
             </aside>
@@ -132,7 +132,9 @@ export function QuestionPage({ item }: { item: QaItem }) {
               ))}
 
               <section id="related-questions">
-                <h2 className="font-display text-3xl tracking-tight">Common questions</h2>
+                <h2 className="font-display text-3xl tracking-tight">
+                  Questions patients often ask
+                </h2>
                 <div className="mt-5 divide-y divide-border border-y border-border">
                   {item.faqs.map((faq) => (
                     <article key={faq.question} className="py-5">

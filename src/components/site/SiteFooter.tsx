@@ -17,8 +17,7 @@ export function SiteFooter() {
             className="h-20 w-auto rounded bg-white/95 p-2"
           />
           <p className="mt-4 max-w-md text-sm opacity-75 leading-relaxed">
-            A family dental practice trusted by Unionville and Markham for more than four decades.
-            Gentle, modern, and quietly thorough.
+            A family dental practice serving Unionville and Markham for more than four decades.
           </p>
         </div>
         <div className="text-sm space-y-2">

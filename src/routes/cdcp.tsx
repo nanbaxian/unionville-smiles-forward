@@ -103,7 +103,8 @@ function CDCP() {
           <h3 className="font-medium text-foreground">What should I bring?</h3>
           <p className="mt-1">
             Please bring your CDCP coverage information, government ID, and any private insurance
-            information you may have.
+            information you may have. If you also have private insurance, please bring that
+            information as well.
           </p>
         </div>
         <div>

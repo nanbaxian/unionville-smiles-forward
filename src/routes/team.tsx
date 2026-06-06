@@ -65,7 +65,7 @@ function Team() {
           Hygienists & assistants
         </div>
         <h2 className="mt-3 font-display text-4xl md:text-5xl tracking-tight">
-          Dentists, hygienists and assistants you'll get to know.
+          A team many patients have known for years.
         </h2>
         <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
           Our hygienists — Alison, Sheryl, Shannon — and certified dental assistants like Shamilee

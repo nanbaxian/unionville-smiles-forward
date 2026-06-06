@@ -46,7 +46,7 @@ function Home() {
               Family dental care in Unionville since 1980.
             </h1>
             <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Dr. J. David Dudley & Associates provides family, cosmetic, restorative and preventive
+              Dr. J. David Dudley & Associates provides family, preventive, restorative and cosmetic
               dental care from our Highway 7 office in Unionville.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">

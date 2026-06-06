@@ -25,7 +25,7 @@ function About() {
     <>
       <PageHeader
         eyebrow="About the practice"
-        title={<>Healthy teeth, for a healthy smile.</>}
+        title={<>A long-standing dental office in Unionville.</>}
         intro="We provide preventive, restorative and cosmetic dental care for patients of all ages. Our team focuses on clear explanations, steady follow-up care, and practical advice you can use at home."
       />
       <Prose>

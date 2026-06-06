@@ -46,7 +46,7 @@ function Questions() {
           Dental answers for Unionville and Markham
         </div>
         <h1 className="font-display text-5xl md:text-7xl leading-[1.02] tracking-tight text-foreground max-w-4xl">
-          Questions patients ask before choosing dental care.
+          Common questions from patients.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
           These answers cover family dental care, CDCP, first-visit expectations and treatment

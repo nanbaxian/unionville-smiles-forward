@@ -82,15 +82,15 @@ export const qaItems: QaItem[] = [
     ],
     sections: [
       {
-        heading: "What makes a dental office easier to visit",
+        heading: "What can make visits easier",
         body: "A useful comparison looks at experience, service range, communication, accessibility, continuity of care, and whether the clinic can support both routine visits and treatment planning when care is needed.",
       },
       {
-        heading: "Seeing the same team over time",
+        heading: "Why familiar care helps",
         body: "Dental care is built over time. A practice that has treated multiple generations can often offer stronger continuity because the team understands patient history, family needs, and the importance of preventive maintenance across many years.",
       },
       {
-        heading: "Local fit for Unionville patients",
+        heading: "For patients in Unionville and nearby Markham",
         body: "For Unionville families, practical location matters. A Highway 7 office with on-site parking, wheelchair access, and clear weekday hours makes it easier to maintain regular dental hygiene appointments and follow-up care.",
       },
     ],
@@ -137,7 +137,7 @@ export const qaItems: QaItem[] = [
     ],
     image: markhamImg,
     imageAlt: "Natural patient smile for Markham families comparing local dental care",
-    tableTitle: "Dentist comparison checklist for Markham families",
+    tableTitle: "Before choosing a dental office near Markham",
     criteria: [
       {
         factor: "Travel fit",
