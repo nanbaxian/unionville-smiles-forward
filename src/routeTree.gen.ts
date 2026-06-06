@@ -19,6 +19,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CdcpRouteImport } from './routes/cdcp'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as QuestionsIndexRouteImport } from './routes/questions.index'
 import { Route as QuestionsFirstDentalVisitUnionvilleRouteImport } from './routes/questions/first-dental-visit-unionville'
 import { Route as QuestionsCdcpDentistUnionvilleRouteImport } from './routes/questions/cdcp-dentist-unionville'
 import { Route as QuestionsBestDentistUnionvilleRouteImport } from './routes/questions/best-dentist-unionville'
@@ -74,6 +75,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuestionsIndexRoute = QuestionsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => QuestionsRoute,
+} as any)
 const QuestionsFirstDentalVisitUnionvilleRoute =
   QuestionsFirstDentalVisitUnionvilleRouteImport.update({
     id: '/first-dental-visit-unionville',
@@ -114,6 +120,7 @@ export interface FileRoutesByFullPath {
   '/questions/best-dentist-unionville': typeof QuestionsBestDentistUnionvilleRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
+  '/questions/': typeof QuestionsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -121,7 +128,6 @@ export interface FileRoutesByTo {
   '/cdcp': typeof CdcpRoute
   '/contact': typeof ContactRoute
   '/new-patients': typeof NewPatientsRoute
-  '/questions': typeof QuestionsRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
@@ -130,6 +136,7 @@ export interface FileRoutesByTo {
   '/questions/best-dentist-unionville': typeof QuestionsBestDentistUnionvilleRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
+  '/questions': typeof QuestionsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -147,6 +154,7 @@ export interface FileRoutesById {
   '/questions/best-dentist-unionville': typeof QuestionsBestDentistUnionvilleRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
+  '/questions/': typeof QuestionsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -165,6 +173,7 @@ export interface FileRouteTypes {
     | '/questions/best-dentist-unionville'
     | '/questions/cdcp-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
+    | '/questions/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -172,7 +181,6 @@ export interface FileRouteTypes {
     | '/cdcp'
     | '/contact'
     | '/new-patients'
-    | '/questions'
     | '/services'
     | '/sitemap.xml'
     | '/team'
@@ -181,6 +189,7 @@ export interface FileRouteTypes {
     | '/questions/best-dentist-unionville'
     | '/questions/cdcp-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
+    | '/questions'
   id:
     | '__root__'
     | '/'
@@ -197,6 +206,7 @@ export interface FileRouteTypes {
     | '/questions/best-dentist-unionville'
     | '/questions/cdcp-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
+    | '/questions/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -284,6 +294,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/questions/': {
+      id: '/questions/'
+      path: '/'
+      fullPath: '/questions/'
+      preLoaderRoute: typeof QuestionsIndexRouteImport
+      parentRoute: typeof QuestionsRoute
+    }
     '/questions/first-dental-visit-unionville': {
       id: '/questions/first-dental-visit-unionville'
       path: '/first-dental-visit-unionville'
@@ -320,6 +337,7 @@ interface QuestionsRouteChildren {
   QuestionsBestDentistUnionvilleRoute: typeof QuestionsBestDentistUnionvilleRoute
   QuestionsCdcpDentistUnionvilleRoute: typeof QuestionsCdcpDentistUnionvilleRoute
   QuestionsFirstDentalVisitUnionvilleRoute: typeof QuestionsFirstDentalVisitUnionvilleRoute
+  QuestionsIndexRoute: typeof QuestionsIndexRoute
 }
 
 const QuestionsRouteChildren: QuestionsRouteChildren = {
@@ -328,6 +346,7 @@ const QuestionsRouteChildren: QuestionsRouteChildren = {
   QuestionsCdcpDentistUnionvilleRoute: QuestionsCdcpDentistUnionvilleRoute,
   QuestionsFirstDentalVisitUnionvilleRoute:
     QuestionsFirstDentalVisitUnionvilleRoute,
+  QuestionsIndexRoute: QuestionsIndexRoute,
 }
 
 const QuestionsRouteWithChildren = QuestionsRoute._addFileChildren(
