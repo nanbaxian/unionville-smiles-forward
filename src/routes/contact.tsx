@@ -83,7 +83,7 @@ function Contact() {
                 "Appointment request — " + (data.get("name") || ""),
               );
               const body = encodeURIComponent(
-                `Name: ${data.get("name")}\nPhone: ${data.get("phone")}\nEmail: ${data.get("email")}\n\n${data.get("message")}`,
+                `Name: ${data.get("name")}\nPhone: ${data.get("phone")}\nEmail: ${data.get("email")}\nNew patient: ${data.get("newpatient")}\nPreferred appointment time: ${data.get("preferredTime")}\n\n${data.get("message")}`,
               );
               window.location.href = `mailto:drdudley@bellnet.ca?subject=${subject}&body=${body}`;
               setSent(true);
@@ -96,6 +96,11 @@ function Contact() {
             </div>
             <Field label="Email" name="email" type="email" required />
             <Field label="Are you a new patient?" name="newpatient" placeholder="Yes / No" />
+            <Field
+              label="Preferred appointment time"
+              name="preferredTime"
+              placeholder="Morning / afternoon / specific day"
+            />
             <div>
               <label className="text-xs uppercase tracking-widest text-muted-foreground">
                 How can we help?

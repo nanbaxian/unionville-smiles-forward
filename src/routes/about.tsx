@@ -4,13 +4,13 @@ import { PageHeader, Prose } from "@/components/site/Section";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Our Practice — Dr. J. David Dudley & Associates" },
+      { title: "About Our Practice - Dr. J. David Dudley & Associates" },
       {
         name: "description",
         content:
           "Learn about our Unionville family dental practice on Highway 7, serving local patients since 1980.",
       },
-      { property: "og:title", content: "About Our Practice — Dr. J. David Dudley & Associates" },
+      { property: "og:title", content: "About Our Practice - Dr. J. David Dudley & Associates" },
       {
         property: "og:description",
         content: "A Unionville family dental practice serving local patients since 1980.",
@@ -31,14 +31,18 @@ function About() {
       <section className="container-prose pb-20 md:pb-28">
         <Prose bleed>
           <p>
-            Our relaxed atmosphere and friendly service go hand in hand — naturally. Our expertise
-            will meet your dental needs including{" "}
-            <strong>self-care and lifestyle recommendations.</strong>
+            Our relaxed atmosphere and friendly service go hand in hand. Our expertise will meet
+            your dental needs including <strong>self-care and lifestyle recommendations.</strong>
+          </p>
+          <p>
+            The original practice philosophy remains simple: combine current dental techniques,
+            regular training, and patient education so patients understand both their oral health
+            and the daily habits that support it.
           </p>
           <p>
             For more than four decades, families across Unionville and Markham have trusted us with
-            their smiles. We see grandparents, parents, and children all in the same week — and we
-            wouldn't have it any other way.
+            their smiles. We see grandparents, parents, and children all in the same week, and we
+            would not have it any other way.
           </p>
         </Prose>
 
@@ -52,6 +56,28 @@ function About() {
               <div className="font-display text-4xl text-primary">{k}</div>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{v}</p>
             </div>
+          ))}
+        </div>
+
+        <div className="mt-14 grid gap-4 md:grid-cols-3">
+          {[
+            [
+              "Modern dental care",
+              "The practice keeps current with dental materials, techniques and health education.",
+            ],
+            [
+              "Whole-mouth prevention",
+              "Advice may include hygiene, nutrition, lifestyle and oral-systemic health context.",
+            ],
+            [
+              "Clear treatment options",
+              "Patients are encouraged to ask questions before treatment begins.",
+            ],
+          ].map(([title, copy]) => (
+            <article key={title} className="rounded-2xl border border-border bg-card p-6">
+              <h2 className="font-display text-2xl tracking-tight text-foreground">{title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{copy}</p>
+            </article>
           ))}
         </div>
       </section>

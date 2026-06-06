@@ -79,9 +79,43 @@ export function practiceSchema() {
     ],
     areaServed: ["Unionville", "Markham", "Ontario"],
     sameAs: [OFFICIAL_LINKS.rcdso, OFFICIAL_LINKS.cdcp],
+    employee: dentistPersonSchemas(),
     description:
       "Family and cosmetic dentistry in Unionville since 1980. Accepting the Canadian Dental Care Program (CDCP). New patients welcome.",
   };
+}
+
+export function dentistPersonSchemas() {
+  return [
+    {
+      "@type": "Physician",
+      "@id": absoluteUrl("/team#dr-david-dudley"),
+      name: "Dr. David Dudley",
+      honorificPrefix: "Dr.",
+      honorificSuffix: "DDS",
+      medicalSpecialty: "Dentistry",
+      alumniOf: "University of Western School of Dentistry",
+      description:
+        "A 1980 licensed graduate of The University of Western School of Dentistry, practicing at Dr. J. David Dudley & Associates for over 30 years with a focus on family and cosmetic dentistry.",
+      worksFor: {
+        "@id": absoluteUrl("/#dentist"),
+      },
+    },
+    {
+      "@type": "Physician",
+      "@id": absoluteUrl("/team#dr-meling-lee"),
+      name: "Dr. Meling Lee",
+      honorificPrefix: "Dr.",
+      honorificSuffix: "DDS",
+      medicalSpecialty: "Dentistry",
+      alumniOf: "University of Toronto Faculty of Dentistry",
+      description:
+        "A 1988 graduate of the University of Toronto Faculty of Dentistry and an integral member of Dr. J. David Dudley & Associates.",
+      worksFor: {
+        "@id": absoluteUrl("/#dentist"),
+      },
+    },
+  ];
 }
 
 export function faqPageSchema(faqs: QuestionAnswer[], idPath: string) {

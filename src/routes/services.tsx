@@ -4,6 +4,26 @@ import cleaningImg from "@/assets/photos/services/dental-cleaning-closeup.webp";
 import alignerImg from "@/assets/photos/services/orthodontic-aligner.webp";
 import implantImg from "@/assets/photos/services/implant-model.webp";
 import xrayImg from "@/assets/photos/technology/dental-xray-review.webp";
+import { breadcrumbSchema, ldJsonScript } from "@/lib/schema";
+
+const serviceNames = [
+  "Full Dental Hygiene Services",
+  "Comprehensive New Patient Exams",
+  "Restorative Treatments",
+  "Crowns and Bridges",
+  "Porcelain Veneers",
+  "Tooth Implants",
+  "TMJ Treatments",
+  "Endodontic Treatments",
+  "Oral Surgery",
+  "Pediatric and Orthodontics",
+  "Tooth Whitening",
+  "Oral Hygiene Education",
+  "Oral Cancer Screening",
+  "Custom Sport Mouth Guards",
+  "Night Guards",
+  "Nutritional Consultations",
+];
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -22,31 +42,20 @@ export const Route = createFileRoute("/services")({
       },
     ],
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "MedicalBusiness",
-          name: "Dr. J. David Dudley & Associates",
-          medicalSpecialty: "Dentistry",
-          availableService: [
-            "Full Dental Hygiene Services",
-            "Comprehensive New Patient Exams",
-            "Restorative Treatments",
-            "Crowns and Bridges",
-            "Porcelain Veneers",
-            "Tooth Implants",
-            "TMJ Treatments",
-            "Endodontic Treatments",
-            "Oral Surgery",
-            "Pediatric and Orthodontics",
-            "Tooth Whitening",
-            "Oral Cancer Screening",
-            "Custom Sport Mouth Guards",
-            "Night Guards",
-          ].map((n) => ({ "@type": "MedicalProcedure", name: n })),
-        }),
-      },
+      ldJsonScript({
+        "@context": "https://schema.org",
+        "@type": "MedicalBusiness",
+        "@id": "https://dental.flashcoding.ca/#dentist",
+        name: "Dr. J. David Dudley & Associates",
+        medicalSpecialty: "Dentistry",
+        availableService: serviceNames.map((n) => ({ "@type": "MedicalProcedure", name: n })),
+      }),
+      ldJsonScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+        ]),
+      ),
     ],
   }),
   component: Services,
@@ -151,6 +160,34 @@ function Services() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section className="container-prose mt-16">
+        <div className="rounded-3xl border border-border bg-card p-8 md:p-10">
+          <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            Original service scope
+          </div>
+          <h2 className="mt-3 font-display text-3xl md:text-4xl tracking-tight">
+            Services patients have historically asked us about.
+          </h2>
+          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-muted-foreground">
+            The original practice site listed hygiene, new-patient exams, restorative dentistry,
+            crowns, bridges, veneers, implants, TMJ care, endodontics, oral surgery, pediatric and
+            orthodontic questions, whitening, mouth guards, night guards, oral cancer screening and
+            nutritional consultations. Availability and suitability always depend on an individual
+            dental assessment.
+          </p>
+          <div className="mt-6 flex flex-wrap gap-2">
+            {serviceNames.map((service) => (
+              <span
+                key={service}
+                className="rounded-full border border-border bg-background px-3 py-1.5 text-xs text-foreground/80"
+              >
+                {service}
+              </span>
+            ))}
+          </div>
         </div>
       </section>
 

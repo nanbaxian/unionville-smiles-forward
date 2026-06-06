@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Section";
 import teamImg from "@/assets/unionvilledental/4112594913.webp";
+import { breadcrumbSchema, dentistPersonSchemas, ldJsonScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
@@ -17,17 +18,31 @@ export const Route = createFileRoute("/team")({
         content: "Meet the dentists and hygienists of our Unionville dental team.",
       },
     ],
+    scripts: [
+      ldJsonScript({
+        "@context": "https://schema.org",
+        "@graph": dentistPersonSchemas(),
+      }),
+      ldJsonScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Team", path: "/team" },
+        ]),
+      ),
+    ],
   }),
   component: Team,
 });
 
 const dentists = [
   {
+    id: "dr-david-dudley",
     name: "Dr. David Dudley, DDS",
     role: "Founding Dentist · Family & Cosmetic Dentistry",
     bio: "A 1980 licensed graduate of The University of Western School of Dentistry, Dave has been practicing at Dr. J.D. Dudley & Associates for over 30 years. He specializes in family and cosmetic dentistry; his commitment to continuing education keeps him on top of every trend. Dave meets all his patients with a friendly and relaxed style that makes for an enjoyable dental experience.",
   },
   {
+    id: "dr-meling-lee",
     name: "Dr. Meling Lee, DDS",
     role: "Associate Dentist",
     bio: "Dr. Lee graduated in 1988 from the University of Toronto, Faculty of Dentistry, and has since been an integral member of the practice. She strongly believes in putting patients at ease through her calm and gentle demeanor. Dedication to the oral health of her patients is of utmost importance to her.",
@@ -45,7 +60,7 @@ function Team() {
 
       <section className="container-prose grid lg:grid-cols-2 gap-8 mt-8">
         {dentists.map((d, i) => (
-          <article key={d.name} className="rounded-3xl border border-border bg-card p-8">
+          <article id={d.id} key={d.name} className="rounded-3xl border border-border bg-card p-8">
             <div className="flex items-start gap-5">
               <div className="grid h-16 w-16 shrink-0 place-items-center rounded-full bg-primary text-primary-foreground font-display text-2xl">
                 {i === 0 ? "DD" : "ML"}
@@ -56,6 +71,11 @@ function Team() {
               </div>
             </div>
             <p className="mt-6 text-base leading-relaxed text-foreground/80">{d.bio}</p>
+            <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
+              Ontario dental registration can be verified through the official RCDSO public
+              register. Registration numbers are not published here until the clinic has confirmed
+              the exact public-register details to display.
+            </p>
           </article>
         ))}
       </section>
