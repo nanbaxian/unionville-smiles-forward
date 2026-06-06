@@ -36,23 +36,23 @@ function Home() {
     <>
       {/* HERO */}
       <section className="container-prose pt-12 md:pt-20 pb-16 md:pb-24">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
-          <div className="lg:col-span-7">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(420px,1.05fr)] lg:gap-12 xl:gap-14 items-center">
+          <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
               <span className="h-1.5 w-1.5 rounded-full bg-[var(--clay)]" /> Caring for Unionville
               since 1980
             </div>
-            <h1 className="mt-6 font-display text-[2.75rem] leading-[1.02] sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight text-foreground">
+            <h1 className="mt-6 max-w-full font-display text-[2.35rem] leading-[1.04] sm:text-6xl md:text-7xl lg:text-[4.75rem] lg:leading-[1.02] xl:text-[5.25rem] tracking-tight text-foreground">
               Family dental care in Unionville since 1980.
             </h1>
             <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed">
               Dr. J. David Dudley & Associates provides family, preventive, restorative and cosmetic
               dental care from our Highway 7 office in Unionville.
             </p>
-            <div className="mt-9 flex flex-wrap items-center gap-3">
+            <div className="mt-9 flex flex-wrap items-center gap-x-3 gap-y-2">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition"
+                className="inline-flex items-center gap-2 rounded-full bg-primary px-5 sm:px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition"
               >
                 Book an appointment <ArrowUpRight className="h-4 w-4" />
               </Link>
@@ -69,30 +69,30 @@ function Home() {
                 Common dental questions
               </Link>
             </div>
-            <dl className="mt-12 grid grid-cols-3 gap-6 max-w-lg">
+            <dl className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
               {[
                 ["45+", "Years in Unionville"],
                 ["CDCP", "Proudly accepted"],
                 ["7 days", "To get you in"],
               ].map(([k, v]) => (
                 <div key={k}>
-                  <dt className="font-display text-3xl text-foreground">{k}</dt>
+                  <dt className="font-display text-2xl sm:text-3xl text-foreground">{k}</dt>
                   <dd className="text-xs text-muted-foreground mt-1">{v}</dd>
                 </div>
               ))}
             </dl>
           </div>
-          <div className="lg:col-span-5 relative">
+          <div className="relative lg:self-center">
             <img
               src={heroImg720}
               srcSet={`${heroImg480} 480w, ${heroImg720} 720w, ${heroImg900} 900w`}
-              sizes="(min-width: 1152px) 500px, (min-width: 1024px) 44vw, calc(100vw - 3rem)"
+              sizes="(min-width: 1152px) 540px, (min-width: 1024px) 47vw, calc(100vw - 3rem)"
               alt="Smiling couple showing healthy teeth"
               width={720}
               height={616}
               decoding="async"
               fetchPriority="high"
-              className="rounded-3xl aspect-[1.08/1] w-full object-cover shadow-2xl shadow-primary/10"
+              className="rounded-3xl aspect-[0.96/1] w-full object-cover object-center shadow-2xl shadow-primary/10"
             />
             <div className="absolute -bottom-6 -left-6 hidden md:block rounded-2xl bg-card border border-border p-4 shadow-xl max-w-[16rem]">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
