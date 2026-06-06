@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
-import logoImg from "@/assets/unionvilledental/logo.webp";
+import logoImg100 from "@/assets/unionvilledental/logo-100.webp";
+import logoImg142 from "@/assets/unionvilledental/logo-142.webp";
 
 const nav = [
   { to: "/about", label: "About" },
@@ -21,10 +22,12 @@ export function SiteHeader() {
       <div className="container-prose flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 group">
           <img
-            src={logoImg}
+            src={logoImg100}
+            srcSet={`${logoImg100} 100w, ${logoImg142} 142w`}
+            sizes="99px"
             alt="Unionville Dental, Dr. Dudley & Associates"
-            width={142}
-            height={120}
+            width={100}
+            height={84}
             className="h-12 w-auto"
           />
         </Link>

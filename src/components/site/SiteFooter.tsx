@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
-import logoImg from "@/assets/unionvilledental/logo.webp";
+import logoImg100 from "@/assets/unionvilledental/logo-100.webp";
+import logoImg142 from "@/assets/unionvilledental/logo-142.webp";
 
 export function SiteFooter() {
   return (
@@ -7,10 +8,12 @@ export function SiteFooter() {
       <div className="container-prose py-16 grid gap-12 md:grid-cols-4">
         <div className="md:col-span-2">
           <img
-            src={logoImg}
+            src={logoImg100}
+            srcSet={`${logoImg100} 100w, ${logoImg142} 142w`}
+            sizes="99px"
             alt="Unionville Dental, Dr. Dudley & Associates"
-            width={142}
-            height={120}
+            width={100}
+            height={84}
             className="h-20 w-auto rounded bg-white/95 p-2"
           />
           <p className="mt-4 max-w-md text-sm opacity-75 leading-relaxed">

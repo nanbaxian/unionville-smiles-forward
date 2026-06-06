@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/unionvilledental/hero-couple-smile.webp";
+import heroImg480 from "@/assets/unionvilledental/hero-couple-smile-480.webp";
+import heroImg720 from "@/assets/unionvilledental/hero-couple-smile-720.webp";
+import heroImg900 from "@/assets/unionvilledental/hero-couple-smile-900.webp";
 import smileImg from "@/assets/unionvilledental/teaser_2571855904.webp";
 import teamImg from "@/assets/unionvilledental/4112594913.webp";
 import cleaningImg from "@/assets/photos/services/dental-cleaning-closeup.webp";
@@ -25,7 +27,6 @@ export const Route = createFileRoute("/")({
         content: "Trusted family dentistry in Unionville since 1980. New patients welcome.",
       },
     ],
-    links: [{ rel: "preload", as: "image", href: heroImg }],
   }),
   component: Home,
 });
@@ -85,10 +86,12 @@ function Home() {
           </div>
           <div className="lg:col-span-5 relative">
             <img
-              src={heroImg}
+              src={heroImg720}
+              srcSet={`${heroImg480} 480w, ${heroImg720} 720w, ${heroImg900} 900w`}
+              sizes="(min-width: 1152px) 500px, (min-width: 1024px) 44vw, calc(100vw - 3rem)"
               alt="Smiling couple showing healthy teeth"
-              width={900}
-              height={739}
+              width={720}
+              height={616}
               decoding="async"
               fetchPriority="high"
               className="rounded-3xl aspect-[1.08/1] w-full object-cover shadow-2xl shadow-primary/10"
