@@ -35,19 +35,17 @@ function Home() {
   return (
     <>
       {/* HERO */}
-      <section className="container-prose pt-12 md:pt-20 pb-16 md:pb-24">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(420px,1.05fr)] lg:gap-12 xl:gap-14 items-center">
-          <div className="max-w-2xl">
+      <section className="container-prose pt-12 md:pt-18 lg:pt-16 pb-16 md:pb-20 lg:pb-20">
+        <div className="grid gap-10 lg:grid-cols-[minmax(480px,1.08fr)_minmax(360px,0.92fr)] lg:gap-10 xl:grid-cols-[minmax(560px,1.1fr)_minmax(420px,0.9fr)] xl:gap-14 items-center">
+          <div className="max-w-[44rem]">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs uppercase tracking-[0.18em] text-muted-foreground">
-              <span className="h-1.5 w-1.5 rounded-full bg-[var(--clay)]" /> Caring for Unionville
-              since 1980
+              <span className="h-1.5 w-1.5 rounded-full bg-[var(--clay)]" /> On Highway 7 since 1980
             </div>
-            <h1 className="mt-6 max-w-full font-display text-[2.35rem] leading-[1.04] sm:text-6xl md:text-7xl lg:text-[4.75rem] lg:leading-[1.02] xl:text-[5.25rem] tracking-tight text-foreground">
-              Family dental care in Unionville since 1980.
+            <h1 className="mt-6 max-w-[12ch] sm:max-w-[14ch] md:max-w-[15ch] lg:max-w-[16ch] xl:max-w-[17ch] font-display text-[2.7rem] leading-[1.02] sm:text-[4.1rem] md:text-[4.7rem] lg:text-[4.05rem] lg:leading-[1.03] xl:text-[4.85rem] tracking-tight text-foreground">
+              Dental care for every generation.
             </h1>
             <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Dr. J. David Dudley & Associates provides family, preventive, restorative and cosmetic
-              dental care from our Highway 7 office in Unionville.
+              Preventive, restorative and cosmetic visits with Dr. J. David Dudley & Associates.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-x-3 gap-y-2">
               <Link
@@ -69,7 +67,7 @@ function Home() {
                 Common dental questions
               </Link>
             </div>
-            <dl className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-lg">
+            <dl className="mt-12 grid grid-cols-3 gap-4 sm:gap-6 max-w-xl">
               {[
                 ["45+", "Years in Unionville"],
                 ["CDCP", "Proudly accepted"],
@@ -82,7 +80,7 @@ function Home() {
               ))}
             </dl>
           </div>
-          <div className="relative lg:self-center">
+          <div className="relative lg:self-center lg:justify-self-end w-full max-w-[32rem] xl:max-w-[34rem]">
             <img
               src={heroImg720}
               srcSet={`${heroImg480} 480w, ${heroImg720} 720w, ${heroImg900} 900w`}
