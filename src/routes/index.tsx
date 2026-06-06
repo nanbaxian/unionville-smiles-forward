@@ -10,6 +10,34 @@ import implantImg from "@/assets/photos/services/implant-model.webp";
 import { ArrowUpRight, Calendar, Clock, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 import { PracticeAddressLink } from "@/components/site/AddressLink";
 
+const homeFaqs = [
+  {
+    question: "Does Dr. J. David Dudley & Associates accept new patients?",
+    answer:
+      "Yes. New patients can call the Unionville office at (905) 477-5825 to request an appointment and ask what to bring for a first visit.",
+  },
+  {
+    question: "Does the office accept CDCP?",
+    answer:
+      "Yes. The office accepts the Canadian Dental Care Program. Patients should bring CDCP coverage information, government ID, and any private insurance details.",
+  },
+  {
+    question: "Where is the dental office located?",
+    answer:
+      "The office is located at 4359 Highway #7, Unionville, ON L3R 1M1, serving Unionville and nearby Markham families.",
+  },
+  {
+    question: "Is Chinese-language help available?",
+    answer:
+      "A Chinese information page is available for local Markham and Unionville patients. Patients can call the office to ask about language support before booking.",
+  },
+  {
+    question: "How can patients verify Ontario dental registration or make a concern known?",
+    answer:
+      "Patients can use the Royal College of Dental Surgeons of Ontario public register to verify Ontario dentists and can review the RCDSO complaints and investigations process for concerns.",
+  },
+];
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -26,6 +54,28 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content: "Trusted family dentistry in Unionville since 1980. New patients welcome.",
+      },
+    ],
+    links: [
+      { rel: "alternate", hrefLang: "en", href: "/" },
+      { rel: "alternate", hrefLang: "zh-Hans", href: "/zh" },
+      { rel: "alternate", hrefLang: "fr", href: "/fr" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: homeFaqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: faq.answer,
+            },
+          })),
+        }),
       },
     ],
   }),
@@ -301,6 +351,49 @@ function Home() {
               </div>
             </Link>
           ))}
+        </div>
+      </section>
+
+      <section className="container-prose pb-24">
+        <div className="grid gap-8 border-y border-border py-14 lg:grid-cols-12">
+          <div className="lg:col-span-4">
+            <div className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+              Patient answers
+            </div>
+            <h2 className="mt-3 font-display text-4xl tracking-tight">
+              Quick answers before you call.
+            </h2>
+          </div>
+          <div className="lg:col-span-8">
+            <div className="grid gap-5 md:grid-cols-2">
+              {homeFaqs.map((faq) => (
+                <article key={faq.question}>
+                  <h3 className="font-medium text-foreground">{faq.question}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{faq.answer}</p>
+                </article>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link
+                to="/zh"
+                className="rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:border-primary/50"
+              >
+                中文信息
+              </Link>
+              <Link
+                to="/fr"
+                className="rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:border-primary/50"
+              >
+                Information en français
+              </Link>
+              <Link
+                to="/patient-rights"
+                className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+              >
+                Patient rights and registration
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 

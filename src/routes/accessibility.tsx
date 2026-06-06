@@ -36,6 +36,12 @@ function Accessibility() {
           across modern devices. The site uses semantic headings, descriptive link text, image alt
           text, visible focus states from browser controls, and responsive layouts.
         </p>
+        <p>
+          Our practical target is WCAG 2.1 AA alignment for core public pages, including keyboard
+          navigation, readable contrast, structured headings, descriptive links, and accessible
+          contact options. If a page does not work for you, contact the office so we can provide the
+          information another way.
+        </p>
 
         <h2 className="font-display text-3xl tracking-tight text-foreground">Office access</h2>
         <p>

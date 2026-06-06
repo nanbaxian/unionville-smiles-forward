@@ -9,13 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ZhRouteImport } from './routes/zh'
 import { Route as VisitRouteImport } from './routes/visit'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as QuestionsRouteImport } from './routes/questions'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as PatientRightsRouteImport } from './routes/patient-rights'
 import { Route as NewPatientsRouteImport } from './routes/new-patients'
+import { Route as FrRouteImport } from './routes/fr'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CdcpRouteImport } from './routes/cdcp'
 import { Route as AccessibilityRouteImport } from './routes/accessibility'
@@ -27,6 +30,11 @@ import { Route as QuestionsFirstDentalVisitUnionvilleRouteImport } from './route
 import { Route as QuestionsChooseFamilyDentistUnionvilleRouteImport } from './routes/questions/choose-family-dentist-unionville'
 import { Route as QuestionsCdcpDentistUnionvilleRouteImport } from './routes/questions/cdcp-dentist-unionville'
 
+const ZhRoute = ZhRouteImport.update({
+  id: '/zh',
+  path: '/zh',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VisitRoute = VisitRouteImport.update({
   id: '/visit',
   path: '/visit',
@@ -57,9 +65,19 @@ const PrivacyRoute = PrivacyRouteImport.update({
   path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PatientRightsRoute = PatientRightsRouteImport.update({
+  id: '/patient-rights',
+  path: '/patient-rights',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewPatientsRoute = NewPatientsRouteImport.update({
   id: '/new-patients',
   path: '/new-patients',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FrRoute = FrRouteImport.update({
+  id: '/fr',
+  path: '/fr',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -123,13 +141,16 @@ export interface FileRoutesByFullPath {
   '/accessibility': typeof AccessibilityRoute
   '/cdcp': typeof CdcpRoute
   '/contact': typeof ContactRoute
+  '/fr': typeof FrRoute
   '/new-patients': typeof NewPatientsRoute
+  '/patient-rights': typeof PatientRightsRoute
   '/privacy': typeof PrivacyRoute
   '/questions': typeof QuestionsRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/visit': typeof VisitRoute
+  '/zh': typeof ZhRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
   '/questions/choose-family-dentist-unionville': typeof QuestionsChooseFamilyDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
@@ -142,12 +163,15 @@ export interface FileRoutesByTo {
   '/accessibility': typeof AccessibilityRoute
   '/cdcp': typeof CdcpRoute
   '/contact': typeof ContactRoute
+  '/fr': typeof FrRoute
   '/new-patients': typeof NewPatientsRoute
+  '/patient-rights': typeof PatientRightsRoute
   '/privacy': typeof PrivacyRoute
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/visit': typeof VisitRoute
+  '/zh': typeof ZhRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
   '/questions/choose-family-dentist-unionville': typeof QuestionsChooseFamilyDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
@@ -161,13 +185,16 @@ export interface FileRoutesById {
   '/accessibility': typeof AccessibilityRoute
   '/cdcp': typeof CdcpRoute
   '/contact': typeof ContactRoute
+  '/fr': typeof FrRoute
   '/new-patients': typeof NewPatientsRoute
+  '/patient-rights': typeof PatientRightsRoute
   '/privacy': typeof PrivacyRoute
   '/questions': typeof QuestionsRouteWithChildren
   '/services': typeof ServicesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/visit': typeof VisitRoute
+  '/zh': typeof ZhRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
   '/questions/choose-family-dentist-unionville': typeof QuestionsChooseFamilyDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
@@ -182,13 +209,16 @@ export interface FileRouteTypes {
     | '/accessibility'
     | '/cdcp'
     | '/contact'
+    | '/fr'
     | '/new-patients'
+    | '/patient-rights'
     | '/privacy'
     | '/questions'
     | '/services'
     | '/sitemap.xml'
     | '/team'
     | '/visit'
+    | '/zh'
     | '/questions/cdcp-dentist-unionville'
     | '/questions/choose-family-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
@@ -201,12 +231,15 @@ export interface FileRouteTypes {
     | '/accessibility'
     | '/cdcp'
     | '/contact'
+    | '/fr'
     | '/new-patients'
+    | '/patient-rights'
     | '/privacy'
     | '/services'
     | '/sitemap.xml'
     | '/team'
     | '/visit'
+    | '/zh'
     | '/questions/cdcp-dentist-unionville'
     | '/questions/choose-family-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
@@ -219,13 +252,16 @@ export interface FileRouteTypes {
     | '/accessibility'
     | '/cdcp'
     | '/contact'
+    | '/fr'
     | '/new-patients'
+    | '/patient-rights'
     | '/privacy'
     | '/questions'
     | '/services'
     | '/sitemap.xml'
     | '/team'
     | '/visit'
+    | '/zh'
     | '/questions/cdcp-dentist-unionville'
     | '/questions/choose-family-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
@@ -239,17 +275,27 @@ export interface RootRouteChildren {
   AccessibilityRoute: typeof AccessibilityRoute
   CdcpRoute: typeof CdcpRoute
   ContactRoute: typeof ContactRoute
+  FrRoute: typeof FrRoute
   NewPatientsRoute: typeof NewPatientsRoute
+  PatientRightsRoute: typeof PatientRightsRoute
   PrivacyRoute: typeof PrivacyRoute
   QuestionsRoute: typeof QuestionsRouteWithChildren
   ServicesRoute: typeof ServicesRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TeamRoute: typeof TeamRoute
   VisitRoute: typeof VisitRoute
+  ZhRoute: typeof ZhRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/zh': {
+      id: '/zh'
+      path: '/zh'
+      fullPath: '/zh'
+      preLoaderRoute: typeof ZhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/visit': {
       id: '/visit'
       path: '/visit'
@@ -292,11 +338,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/patient-rights': {
+      id: '/patient-rights'
+      path: '/patient-rights'
+      fullPath: '/patient-rights'
+      preLoaderRoute: typeof PatientRightsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/new-patients': {
       id: '/new-patients'
       path: '/new-patients'
       fullPath: '/new-patients'
       preLoaderRoute: typeof NewPatientsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/fr': {
+      id: '/fr'
+      path: '/fr'
+      fullPath: '/fr'
+      preLoaderRoute: typeof FrRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -400,13 +460,16 @@ const rootRouteChildren: RootRouteChildren = {
   AccessibilityRoute: AccessibilityRoute,
   CdcpRoute: CdcpRoute,
   ContactRoute: ContactRoute,
+  FrRoute: FrRoute,
   NewPatientsRoute: NewPatientsRoute,
+  PatientRightsRoute: PatientRightsRoute,
   PrivacyRoute: PrivacyRoute,
   QuestionsRoute: QuestionsRouteWithChildren,
   ServicesRoute: ServicesRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TeamRoute: TeamRoute,
   VisitRoute: VisitRoute,
+  ZhRoute: ZhRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

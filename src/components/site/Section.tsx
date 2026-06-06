@@ -20,7 +20,9 @@ export function PageHeader({
         {title}
       </h1>
       {intro && (
-        <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">{intro}</p>
+        <p className="mt-6 max-w-2xl break-words text-lg text-muted-foreground leading-relaxed">
+          {intro}
+        </p>
       )}
     </section>
   );

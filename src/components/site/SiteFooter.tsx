@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import logoImg100 from "@/assets/unionvilledental/logo-100.webp";
 import logoImg142 from "@/assets/unionvilledental/logo-142.webp";
 import { PracticeAddressLink } from "@/components/site/AddressLink";
+import { OFFICIAL_LINKS } from "@/lib/practice-info";
 
 export function SiteFooter() {
   return (
@@ -39,6 +40,9 @@ export function SiteFooter() {
           <Link to="/cdcp" className="block min-h-11 py-2 opacity-80 hover:opacity-100">
             CDCP
           </Link>
+          <Link to="/patient-rights" className="block min-h-11 py-2 opacity-80 hover:opacity-100">
+            Patient Rights
+          </Link>
         </div>
 
         <div className="space-y-2 text-sm">
@@ -59,6 +63,39 @@ export function SiteFooter() {
               drdudley@bellnet.ca
             </a>
           </p>
+          <div className="pt-2">
+            <div className="mb-2 text-xs uppercase tracking-widest opacity-60">Languages</div>
+            <div className="flex flex-wrap gap-x-4 gap-y-2">
+              <Link to="/zh" className="opacity-80 hover:opacity-100">
+                中文
+              </Link>
+              <Link to="/fr" className="opacity-80 hover:opacity-100">
+                Français
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="container-prose grid gap-4 py-6 text-xs leading-relaxed opacity-65 md:grid-cols-3">
+          <span>CDCP accepted. Official program details are maintained by Canada.ca.</span>
+          <a
+            href={OFFICIAL_LINKS.cdcp}
+            target="_blank"
+            rel="noopener"
+            className="hover:opacity-100"
+          >
+            Government of Canada CDCP information
+          </a>
+          <a
+            href={OFFICIAL_LINKS.rcdsoFindDentist}
+            target="_blank"
+            rel="noopener"
+            className="hover:opacity-100"
+          >
+            Verify Ontario dental registration through RCDSO
+          </a>
         </div>
       </div>
 

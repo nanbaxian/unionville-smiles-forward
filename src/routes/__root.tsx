@@ -13,7 +13,7 @@ import appCss from "../styles.css?url";
 import logoImg from "@/assets/unionvilledental/logo.webp";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
-import { PRACTICE_ADDRESS, PRACTICE_MAPS_URL } from "@/lib/practice-info";
+import { OFFICIAL_LINKS, PRACTICE_ADDRESS, PRACTICE_MAPS_URL } from "@/lib/practice-info";
 
 function NotFoundComponent() {
   return (
@@ -111,6 +111,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           email: "drdudley@bellnet.ca",
           priceRange: "$$",
           paymentAccepted: ["Cash", "Debit Card", "Mastercard", "Visa", "CDCP"],
+          knowsLanguage: ["English", "Chinese", "French"],
+          medicalSpecialty: "Dentistry",
           address: {
             "@type": "PostalAddress",
             streetAddress: PRACTICE_ADDRESS.streetSchema,
@@ -141,7 +143,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             },
           ],
           areaServed: ["Unionville", "Markham", "Ontario"],
-          sameAs: ["https://www.unionvilledental.com/"],
+          sameAs: ["https://www.unionvilledental.com/", OFFICIAL_LINKS.rcdso, OFFICIAL_LINKS.cdcp],
           description:
             "Family and cosmetic dentistry in Unionville since 1980. Accepting the Canadian Dental Care Program (CDCP). New patients welcome.",
         }),
