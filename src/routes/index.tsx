@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroImg from "@/assets/photos/clinic/treatment-room-consult.webp";
+import heroImg from "@/assets/unionvilledental/hero-couple-smile.webp";
 import smileImg from "@/assets/unionvilledental/teaser_2571855904.webp";
 import teamImg from "@/assets/unionvilledental/4112594913.webp";
 import cleaningImg from "@/assets/photos/services/dental-cleaning-closeup.webp";
@@ -85,10 +85,10 @@ function Home() {
           <div className="lg:col-span-5 relative">
             <img
               src={heroImg}
-              alt="Unionville dental consultation room at Dr. J. David Dudley & Associates"
-              width={1600}
-              height={1200}
-              className="rounded-3xl aspect-[4/5] w-full object-cover shadow-2xl shadow-primary/10"
+              alt="Smiling couple showing healthy teeth"
+              width={900}
+              height={739}
+              className="rounded-3xl aspect-[1.08/1] w-full object-cover shadow-2xl shadow-primary/10"
             />
             <div className="absolute -bottom-6 -left-6 hidden md:block rounded-2xl bg-card border border-border p-4 shadow-xl max-w-[16rem]">
               <div className="flex items-center gap-2 text-xs text-muted-foreground">
