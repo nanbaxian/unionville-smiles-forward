@@ -20,19 +20,19 @@ export function SiteFooter() {
         </div>
         <div className="text-sm space-y-2">
           <div className="uppercase tracking-widest text-xs opacity-60 mb-3">Practice</div>
-          <Link to="/about" className="block hover:opacity-100 opacity-80">
+          <Link to="/about" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
             About
           </Link>
-          <Link to="/team" className="block hover:opacity-100 opacity-80">
+          <Link to="/team" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
             Team
           </Link>
-          <Link to="/services" className="block hover:opacity-100 opacity-80">
+          <Link to="/services" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
             Services
           </Link>
-          <Link to="/questions" className="block hover:opacity-100 opacity-80">
+          <Link to="/questions" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
             Questions
           </Link>
-          <Link to="/cdcp" className="block hover:opacity-100 opacity-80">
+          <Link to="/cdcp" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
             CDCP
           </Link>
         </div>
@@ -44,11 +44,17 @@ export function SiteFooter() {
             Unionville, ON L3R 1M1
           </p>
           <p className="opacity-80">
-            <a href="tel:9054775825" className="hover:opacity-100">
+            <a
+              href="tel:9054775825"
+              className="inline-flex min-h-11 items-center hover:opacity-100"
+            >
               (905) 477-5825
             </a>
             <br />
-            <a href="mailto:drdudley@bellnet.ca" className="hover:opacity-100">
+            <a
+              href="mailto:drdudley@bellnet.ca"
+              className="inline-flex min-h-11 items-center hover:opacity-100"
+            >
               drdudley@bellnet.ca
             </a>
           </p>

@@ -25,6 +25,7 @@ export const Route = createFileRoute("/")({
         content: "Trusted family dentistry in Unionville since 1980. New patients welcome.",
       },
     ],
+    links: [{ rel: "preload", as: "image", href: heroImg }],
   }),
   component: Home,
 });
@@ -88,6 +89,8 @@ function Home() {
               alt="Smiling couple showing healthy teeth"
               width={900}
               height={739}
+              decoding="async"
+              fetchPriority="high"
               className="rounded-3xl aspect-[1.08/1] w-full object-cover shadow-2xl shadow-primary/10"
             />
             <div className="absolute -bottom-6 -left-6 hidden md:block rounded-2xl bg-card border border-border p-4 shadow-xl max-w-[16rem]">
@@ -321,7 +324,7 @@ function Home() {
           <div className="lg:col-span-4 flex flex-wrap gap-3 lg:justify-end">
             <Link
               to="/cdcp"
-              className="inline-flex items-center gap-2 rounded-full bg-[var(--clay)] px-6 py-3 text-sm font-medium text-white hover:opacity-90"
+              className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-primary hover:bg-white/90"
             >
               Learn about CDCP <ArrowUpRight className="h-4 w-4" />
             </Link>
