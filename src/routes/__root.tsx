@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import logoImg from "@/assets/unionvilledental/logo.webp";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
+import { PRACTICE_ADDRESS, PRACTICE_MAPS_URL } from "@/lib/practice-info";
 
 function NotFoundComponent() {
   return (
@@ -112,14 +113,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           paymentAccepted: ["Cash", "Debit Card", "Mastercard", "Visa", "CDCP"],
           address: {
             "@type": "PostalAddress",
-            streetAddress: "4359 Highway 7",
-            addressLocality: "Unionville",
-            addressRegion: "ON",
-            postalCode: "L3R 1M1",
+            streetAddress: PRACTICE_ADDRESS.streetSchema,
+            addressLocality: PRACTICE_ADDRESS.locality,
+            addressRegion: PRACTICE_ADDRESS.region,
+            postalCode: PRACTICE_ADDRESS.postalCode,
             addressCountry: "CA",
           },
-          hasMap:
-            "https://www.google.com/maps/search/?api=1&query=4359+Highway+7+Unionville+ON+L3R+1M1",
+          hasMap: PRACTICE_MAPS_URL,
           openingHoursSpecification: [
             {
               "@type": "OpeningHoursSpecification",

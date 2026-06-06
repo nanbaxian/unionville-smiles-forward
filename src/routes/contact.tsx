@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { PageHeader } from "@/components/site/Section";
 import { Phone, Mail, MapPin } from "lucide-react";
+import { PRACTICE_ADDRESS, PRACTICE_MAPS_URL } from "@/lib/practice-info";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -54,17 +55,22 @@ function Contact() {
             </div>
             <div className="mt-1 font-display text-2xl break-all">drdudley@bellnet.ca</div>
           </a>
-          <div className="rounded-2xl border border-border bg-card p-6">
+          <a
+            href={PRACTICE_MAPS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block rounded-2xl border border-border bg-card p-6 hover:border-primary/40 transition"
+          >
             <MapPin className="h-5 w-5 text-[var(--clay)]" />
             <div className="mt-3 text-xs uppercase tracking-widest text-muted-foreground">
               Address
             </div>
             <div className="mt-1 text-foreground">
-              4359 Highway #7
+              {PRACTICE_ADDRESS.street}
               <br />
-              Unionville, ON L3R 1M1
+              {PRACTICE_ADDRESS.locality}, {PRACTICE_ADDRESS.region} {PRACTICE_ADDRESS.postalCode}
             </div>
-          </div>
+          </a>
         </div>
 
         <div className="lg:col-span-7">

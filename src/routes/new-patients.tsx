@@ -72,9 +72,8 @@ function NewPatients() {
           </div>
           <div className="md:col-span-4 md:text-right">
             <a
-              href="https://www.unionvilledental.com/app/download/7127493544/New+patient+infomation.pdf"
-              target="_blank"
-              rel="noopener"
+              href="/forms/new-patient-information.pdf"
+              download
               className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90"
             >
               <FileText className="h-4 w-4" /> Download form (PDF · 2.4 MB)

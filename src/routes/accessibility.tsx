@@ -1,4 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { AddressLink } from "@/components/site/AddressLink";
 import { PageHeader, Prose } from "@/components/site/Section";
 
 export const Route = createFileRoute("/accessibility")({
@@ -38,8 +39,12 @@ function Accessibility() {
 
         <h2 className="font-display text-3xl tracking-tight text-foreground">Office access</h2>
         <p>
-          The office is located at 4359 Highway 7 in Unionville. Parking is available, and the
-          office is wheelchair accessible. If you need help planning a visit, call{" "}
+          The office is located at{" "}
+          <AddressLink className="text-primary underline underline-offset-2">
+            4359 Highway 7 in Unionville
+          </AddressLink>
+          . Parking is available, and the office is wheelchair accessible. If you need help planning
+          a visit, call{" "}
           <a className="text-primary underline underline-offset-2" href="tel:9054775825">
             (905) 477-5825
           </a>{" "}

@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ArrowLeft, ArrowUpRight, CheckCircle } from "lucide-react";
 import type { QaItem } from "@/lib/qa-content";
+import { LinkablePracticeAddressText } from "@/components/site/AddressLink";
 
 export function QuestionPage({ item }: { item: QaItem }) {
   return (
@@ -98,7 +99,12 @@ export function QuestionPage({ item }: { item: QaItem }) {
                         <tr key={row.factor} className="border-t border-border align-top">
                           <td className="px-4 py-4 font-medium text-foreground">{row.factor}</td>
                           <td className="px-4 py-4 text-muted-foreground">{row.whyItMatters}</td>
-                          <td className="px-4 py-4 text-foreground/80">{row.localSignal}</td>
+                          <td className="px-4 py-4 text-foreground/80">
+                            <LinkablePracticeAddressText
+                              text={row.localSignal}
+                              className="text-primary underline underline-offset-2"
+                            />
+                          </td>
                         </tr>
                       ))}
                     </tbody>
@@ -112,7 +118,10 @@ export function QuestionPage({ item }: { item: QaItem }) {
                         {row.whyItMatters}
                       </p>
                       <p className="mt-2 text-sm leading-relaxed text-foreground/85">
-                        {row.localSignal}
+                        <LinkablePracticeAddressText
+                          text={row.localSignal}
+                          className="text-primary underline underline-offset-2"
+                        />
                       </p>
                     </div>
                   ))}
@@ -140,7 +149,10 @@ export function QuestionPage({ item }: { item: QaItem }) {
                     <article key={faq.question} className="py-5">
                       <h3 className="font-medium text-foreground">{faq.question}</h3>
                       <p className="mt-2 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-                        {faq.answer}
+                        <LinkablePracticeAddressText
+                          text={faq.answer}
+                          className="text-primary underline underline-offset-2"
+                        />
                       </p>
                     </article>
                   ))}

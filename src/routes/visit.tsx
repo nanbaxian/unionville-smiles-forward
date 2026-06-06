@@ -1,11 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Section";
+import { PracticeAddressLink } from "@/components/site/AddressLink";
+import { PRACTICE_ADDRESS, PRACTICE_MAP_EMBED_URL, PRACTICE_MAPS_URL } from "@/lib/practice-info";
 
 export const Route = createFileRoute("/visit")({
   head: () => ({
     meta: [
       { title: "Visit Us — Office Hours, Directions & Parking" },
-      { name: "description", content: "Office hours, directions and payment policies for Dr. J. David Dudley & Associates at 4359 Highway 7, Unionville, ON." },
+      {
+        name: "description",
+        content:
+          "Office hours, directions and payment policies for Dr. J. David Dudley & Associates at 4359 Highway 7, Unionville, ON.",
+      },
       { property: "og:title", content: "Visit Us — Unionville Dentist" },
       { property: "og:description", content: "Hours, directions, parking and payment options." },
     ],
@@ -45,20 +51,17 @@ function Visit() {
 
         <div className="rounded-3xl border border-border bg-card p-8">
           <h2 className="font-display text-2xl tracking-tight">Address & parking</h2>
-          <p className="mt-5 text-foreground">
-            4359 Highway #7<br/>
-            Unionville, ON L3R 1M1<br/>
-            Canada
-          </p>
+          <PracticeAddressLink className="mt-5 block text-foreground hover:text-primary" />
+          <p className="mt-1 text-foreground">{PRACTICE_ADDRESS.country}</p>
           <ul className="mt-5 space-y-2 text-sm text-muted-foreground">
             <li>· On-site parking available</li>
             <li>· Wheelchair accessible entrance</li>
             <li>· Steps from Unionville Main Street</li>
           </ul>
           <a
-            href="https://maps.google.com/?q=4359+Highway+7+Unionville+ON"
+            href={PRACTICE_MAPS_URL}
             target="_blank"
-            rel="noopener"
+            rel="noopener noreferrer"
             className="mt-6 inline-flex rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           >
             Open in Google Maps →
@@ -70,7 +73,7 @@ function Visit() {
         <div className="rounded-3xl overflow-hidden border border-border aspect-[16/8]">
           <iframe
             title="Map to Dr. J. David Dudley & Associates"
-            src="https://www.google.com/maps?q=4359%20Highway%207%20Unionville%20ON&output=embed"
+            src={PRACTICE_MAP_EMBED_URL}
             className="w-full h-full"
             loading="lazy"
           />
@@ -81,15 +84,24 @@ function Visit() {
         <div className="rounded-3xl border border-border bg-card p-8">
           <h2 className="font-display text-2xl tracking-tight">Payment policies</h2>
           <p className="mt-4 text-foreground/85 leading-relaxed">
-            We assist you with your dental insurance claim — please bring your insurance card when you visit.
-            In addition, we accept <strong>Visa, Mastercard, Debit Cards, Cash</strong>, and CDCP.
+            We assist you with your dental insurance claim — please bring your insurance card when
+            you visit. In addition, we accept <strong>Visa, Mastercard, Debit Cards, Cash</strong>,
+            and CDCP.
           </p>
         </div>
         <div className="rounded-3xl bg-primary text-primary-foreground p-8 flex flex-col justify-between">
           <h2 className="font-display text-2xl">Ready to book?</h2>
           <div className="mt-6 flex flex-wrap gap-3">
-            <a href="tel:9054775825" className="rounded-full bg-[var(--clay)] px-5 py-2.5 text-sm font-medium">(905) 477-5825</a>
-            <Link to="/contact" className="rounded-full border border-white/30 px-5 py-2.5 text-sm font-medium hover:bg-white/10">
+            <a
+              href="tel:9054775825"
+              className="rounded-full bg-[var(--clay)] px-5 py-2.5 text-sm font-medium"
+            >
+              (905) 477-5825
+            </a>
+            <Link
+              to="/contact"
+              className="rounded-full border border-white/30 px-5 py-2.5 text-sm font-medium hover:bg-white/10"
+            >
               Use the contact form
             </Link>
           </div>

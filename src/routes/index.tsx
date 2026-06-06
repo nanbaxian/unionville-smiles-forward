@@ -8,6 +8,7 @@ import cleaningImg from "@/assets/photos/services/dental-cleaning-closeup.webp";
 import xrayImg from "@/assets/photos/technology/dental-xray-review.webp";
 import implantImg from "@/assets/photos/services/implant-model.webp";
 import { ArrowUpRight, Calendar, Clock, MapPin, ShieldCheck, Sparkles } from "lucide-react";
+import { PracticeAddressLink } from "@/components/site/AddressLink";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,8 +46,8 @@ function Home() {
               Family dentistry in Unionville for long-term oral health.
             </h1>
             <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Preventive, restorative, and cosmetic care for children, adults, and seniors
-              with Dr. J. David Dudley & Associates.
+              Preventive, restorative, and cosmetic care for children, adults, and seniors with Dr.
+              J. David Dudley & Associates.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-x-3 gap-y-2">
               <Link
@@ -382,11 +383,7 @@ function Home() {
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">
                   Address
                 </div>
-                <p className="mt-2 text-foreground">
-                  4359 Highway #7
-                  <br />
-                  Unionville, ON L3R 1M1
-                </p>
+                <PracticeAddressLink className="mt-2 block text-foreground hover:text-primary" />
               </div>
               <div>
                 <div className="text-xs uppercase tracking-widest text-muted-foreground">Hours</div>

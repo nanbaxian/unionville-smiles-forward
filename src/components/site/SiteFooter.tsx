@@ -1,11 +1,12 @@
 import { Link } from "@tanstack/react-router";
 import logoImg100 from "@/assets/unionvilledental/logo-100.webp";
 import logoImg142 from "@/assets/unionvilledental/logo-142.webp";
+import { PracticeAddressLink } from "@/components/site/AddressLink";
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-border bg-[oklch(0.22_0.03_200)] text-[oklch(0.92_0.02_85)]">
-      <div className="container-prose py-16 grid gap-12 md:grid-cols-4">
+      <div className="container-prose grid gap-12 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
           <img
             src={logoImg100}
@@ -16,41 +17,33 @@ export function SiteFooter() {
             height={84}
             className="h-20 w-auto rounded bg-white/95 p-2"
           />
-          <p className="mt-4 max-w-md text-sm opacity-75 leading-relaxed">
+          <p className="mt-4 max-w-md text-sm leading-relaxed opacity-75">
             A family dental practice serving Unionville and Markham for more than four decades.
           </p>
         </div>
-        <div className="text-sm space-y-2">
-          <div className="uppercase tracking-widest text-xs opacity-60 mb-3">Practice</div>
-          <Link to="/about" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
+
+        <div className="space-y-2 text-sm">
+          <div className="mb-3 text-xs uppercase tracking-widest opacity-60">Practice</div>
+          <Link to="/about" className="block min-h-11 py-2 opacity-80 hover:opacity-100">
             About
           </Link>
-          <Link to="/team" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
+          <Link to="/team" className="block min-h-11 py-2 opacity-80 hover:opacity-100">
             Team
           </Link>
-          <Link to="/services" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
+          <Link to="/services" className="block min-h-11 py-2 opacity-80 hover:opacity-100">
             Services
           </Link>
-          <Link to="/questions" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
+          <Link to="/questions" className="block min-h-11 py-2 opacity-80 hover:opacity-100">
             Questions
           </Link>
-          <Link to="/cdcp" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
+          <Link to="/cdcp" className="block min-h-11 py-2 opacity-80 hover:opacity-100">
             CDCP
           </Link>
-          <Link to="/privacy" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
-            Privacy
-          </Link>
-          <Link to="/accessibility" className="block min-h-11 py-2 hover:opacity-100 opacity-80">
-            Accessibility
-          </Link>
         </div>
-        <div className="text-sm space-y-2">
-          <div className="uppercase tracking-widest text-xs opacity-60 mb-3">Visit</div>
-          <p className="opacity-80">
-            4359 Highway #7
-            <br />
-            Unionville, ON L3R 1M1
-          </p>
+
+        <div className="space-y-2 text-sm">
+          <div className="mb-3 text-xs uppercase tracking-widest opacity-60">Visit</div>
+          <PracticeAddressLink className="block opacity-80 hover:opacity-100" />
           <p className="opacity-80">
             <a
               href="tel:9054775825"
@@ -68,12 +61,22 @@ export function SiteFooter() {
           </p>
         </div>
       </div>
+
       <div className="border-t border-white/10">
-        <div className="container-prose flex flex-col md:flex-row justify-between gap-2 py-6 text-xs opacity-60">
+        <div className="container-prose flex flex-col gap-3 py-6 text-xs opacity-60 md:flex-row md:items-center md:justify-between">
           <span>
-            © {new Date().getFullYear()} Dr. J. David Dudley &amp; Associates. All rights reserved.
+            &copy; {new Date().getFullYear()} Dr. J. David Dudley &amp; Associates. All rights
+            reserved.
           </span>
-          <span>Proudly serving Unionville · Markham · Ontario</span>
+          <div className="flex flex-wrap gap-x-4 gap-y-2">
+            <span>Proudly serving Unionville &middot; Markham &middot; Ontario</span>
+            <Link to="/privacy" className="hover:opacity-100">
+              Privacy
+            </Link>
+            <Link to="/accessibility" className="hover:opacity-100">
+              Accessibility
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
