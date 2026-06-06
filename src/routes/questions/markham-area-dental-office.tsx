@@ -2,9 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { QuestionPage } from "@/components/site/QuestionPage";
 import { qaBySlug, questionSchema } from "@/lib/qa-content";
 
-const item = qaBySlug["best-dentist-markham"];
+const item = qaBySlug["markham-area-dental-office"];
 
-export const Route = createFileRoute("/questions/best-dentist-markham")({
+export const Route = createFileRoute("/questions/markham-area-dental-office")({
   head: () => ({
     meta: [
       { title: item.metaTitle },

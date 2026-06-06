@@ -9,7 +9,7 @@ export const Route = createFileRoute("/questions/")({
       {
         name: "description",
         content:
-          "Clear answers to common dental questions from Unionville and Markham patients, including CDCP, first visits, cleanings, services and choosing a dentist.",
+          "Clear answers to common dental questions from Unionville and Markham-area patients, including CDCP, first visits, cleanings, services and choosing a dental office.",
       },
       { property: "og:title", content: "Dental Questions in Unionville" },
       {
@@ -49,8 +49,8 @@ function Questions() {
           Questions patients ask before choosing dental care.
         </h1>
         <p className="mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
-          These answers are written for patients comparing family dental care, CDCP options,
-          first-visit expectations and treatment choices near Unionville and Markham.
+          These answers cover family dental care, CDCP, first-visit expectations and treatment
+          choices near Unionville and Markham.
         </p>
       </section>
 

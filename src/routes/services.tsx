@@ -12,13 +12,13 @@ export const Route = createFileRoute("/services")({
       {
         name: "description",
         content:
-          "Gentle family, cosmetic, restorative and preventative dental services in Unionville. From hygiene to implants — we cover the full range.",
+          "Preventive, restorative, cosmetic, family, night guard and TMJ-related dental services at a Unionville dental office on Highway 7.",
       },
       { property: "og:title", content: "Our Services — Unionville Dentist" },
       {
         property: "og:description",
         content:
-          "Full-service gentle dentistry: hygiene, restorations, implants, cosmetic, TMJ and more.",
+          "Dental services for Unionville and Markham-area patients, including cleanings, exams, restorations, cosmetic care and night guards.",
       },
     ],
     scripts: [
@@ -54,29 +54,42 @@ export const Route = createFileRoute("/services")({
 
 const groups = [
   {
-    title: "Gentle dentistry",
+    title: "Care by patient need",
     items: [
-      ["Full dental hygiene services", "Cleanings, scaling, and personalized hygiene plans."],
-      ["Comprehensive new-patient exams", "A complete picture of your oral health, head to toe."],
-      ["Latest restorative treatments", "Modern materials, natural-looking results."],
-      ["Crowns & bridges", "Durable restorations that feel like your own teeth."],
-      ["Porcelain veneers", "Beautiful, conservative cosmetic transformations."],
-      ["Tooth implants", "Long-term replacement that restores function and confidence."],
-      ["TMJ treatments", "Relief for jaw pain, clicking, and tension headaches."],
-      ["Endodontic treatments", "Comfortable root canal therapy when needed."],
-      ["Oral surgery", "Skilled, careful procedures with thorough aftercare."],
-      ["Pediatric & orthodontics", "Friendly care that builds lifelong healthy habits."],
-      ["Tooth whitening", "Safe, professional whitening for a brighter smile."],
+      [
+        "Preventive care",
+        "Cleanings, exams, gum assessment, oral cancer screening and home-care guidance.",
+      ],
+      [
+        "Restorative care",
+        "Fillings, crowns, bridges and implant restorations to repair damaged or missing teeth.",
+      ],
+      [
+        "Cosmetic dentistry",
+        "Whitening, veneers and tooth-coloured restorations for patients who want to improve the appearance of their smile.",
+      ],
+      ["Children and families", "Dental visits for children, teens, adults and seniors."],
+      [
+        "Night guards and TMJ concerns",
+        "Custom guards for grinding, clenching and jaw discomfort.",
+      ],
     ],
   },
   {
-    title: "Preventative services",
+    title: "Additional services",
     items: [
-      ["Oral hygiene education", "Practical coaching for home care that actually works."],
-      ["Oral cancer screening", "Routine screening at every recall visit."],
+      [
+        "Comprehensive new-patient exams",
+        "A review of teeth, gums, oral tissues and X-rays when needed.",
+      ],
+      ["Endodontic treatments", "Root canal treatment when a tooth can be treated and maintained."],
+      ["Oral surgery", "Dental surgery procedures with instructions for follow-up care."],
+      [
+        "Pediatric & orthodontic questions",
+        "Guidance for younger patients and alignment concerns.",
+      ],
       ["Custom sport mouth guards", "Made-to-fit protection for active lifestyles."],
-      ["Night guards", "Custom guards for grinding and clenching."],
-      ["Nutritional consultations", "Food choices that support a healthy mouth."],
+      ["Nutritional consultations", "Food and home-care guidance related to oral health."],
     ],
   },
 ];
@@ -86,8 +99,8 @@ function Services() {
     <>
       <PageHeader
         eyebrow="Our range of treatments"
-        title={<>Gentle services — for every smile, at every stage.</>}
-        intro="Our goal is to create and maintain a healthy mouth, with overall wellness advice for your optimal health. When you walk into our office, you're made to feel at ease — we give you our full attention and answer any questions you have along the way."
+        title={<>Dental services for Unionville families.</>}
+        intro="We provide preventive, restorative, cosmetic and family dental care from our Highway 7 office. If you are unsure where to start, call the office and we can help you book the right type of visit."
       />
 
       <section className="container-prose grid lg:grid-cols-12 gap-8 items-start">
@@ -214,7 +227,7 @@ function Services() {
           <div>
             <h2 className="font-display text-3xl md:text-4xl">Have questions about a treatment?</h2>
             <p className="mt-2 opacity-80">
-              We're happy to talk you through any procedure before you book.
+              Call the office if you are unsure which appointment type to request.
             </p>
           </div>
           <a

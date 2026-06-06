@@ -39,8 +39,8 @@ function Team() {
     <>
       <PageHeader
         eyebrow="Let us introduce ourselves"
-        title={<>The hands behind every healthy smile.</>}
-        intro="A healthy smile coupled with a healthy body lets our patients live to their full potential. Get to know the dentists, hygienists and assistants who make that possible."
+        title={<>Meet our dental team.</>}
+        intro="Our dentists, hygienists and assistants work together to provide steady, familiar care for patients of all ages."
       />
 
       <section className="container-prose grid lg:grid-cols-2 gap-8 mt-8">
@@ -65,7 +65,7 @@ function Team() {
           Hygienists & assistants
         </div>
         <h2 className="mt-3 font-display text-4xl md:text-5xl tracking-tight">
-          A few of our dedicated dental team members.
+          Dentists, hygienists and assistants you'll get to know.
         </h2>
         <p className="mt-5 max-w-2xl text-muted-foreground leading-relaxed">
           Our hygienists — Alison, Sheryl, Shannon — and certified dental assistants like Shamilee

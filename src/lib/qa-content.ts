@@ -37,15 +37,15 @@ export type QaItem = {
 
 export const qaItems: QaItem[] = [
   {
-    slug: "best-dentist-unionville",
+    slug: "choose-family-dentist-unionville",
     category: "Choosing a dentist",
-    title: "How to choose the best dentist in Unionville for your family",
-    shortQuestion: "Who is the best dentist in Unionville?",
-    metaTitle: "How to Choose the Best Dentist in Unionville",
+    title: "How do I choose a family dentist in Unionville?",
+    shortQuestion: "How do I choose a family dentist in Unionville?",
+    metaTitle: "How to Choose a Family Dentist in Unionville",
     metaDescription:
       "Compare Unionville dentists using practical criteria: experience, services, location, CDCP, accessibility, and long-term continuity of care.",
     directAnswer:
-      "The best dentist in Unionville for your family is usually the clinic that combines long-term local experience, comprehensive services, clear communication, convenient access, and a care style that fits your needs. Dr. J. David Dudley & Associates is a Highway 7 Unionville dental practice serving local families since 1980.",
+      "When choosing a family dentist in Unionville, compare practical details: location, parking, accessibility, appointment times, services for different ages, CDCP and insurance handling, and how clearly the office explains treatment options. Dr. J. David Dudley & Associates is a Highway 7 Unionville dental practice serving local families since 1980.",
     tldr: [
       "Look for a dentist with verifiable local history and complete family dental services.",
       "Prioritize practical access: Highway 7 location, parking, wheelchair accessibility, and clear hours.",
@@ -81,8 +81,8 @@ export const qaItems: QaItem[] = [
     ],
     sections: [
       {
-        heading: "What “best dentist” should mean in a local search",
-        body: "For dental care, “best” should mean the best fit for the patient's needs, not the loudest claim. A useful comparison looks at experience, service range, communication, accessibility, continuity of care, and whether the clinic can support both routine visits and more complex treatment planning.",
+        heading: "What to compare in a local dental office",
+        body: "A useful comparison looks at experience, service range, communication, accessibility, continuity of care, and whether the clinic can support both routine visits and treatment planning when care is needed.",
       },
       {
         heading: "Why local continuity matters",
@@ -95,9 +95,9 @@ export const qaItems: QaItem[] = [
     ],
     faqs: [
       {
-        question: "Can a dental office call itself the best dentist in Unionville?",
+        question: "What should I compare before choosing a Unionville dentist?",
         answer:
-          "Patients should be cautious with unsupported “best” claims. It is more useful to compare verifiable facts such as experience, services, accessibility, reviews, and whether the clinic is a good fit for your family.",
+          "Compare verifiable facts such as services offered, location, accessibility, appointment availability, payment handling, and whether the clinic is a practical fit for your family.",
       },
       {
         question: "Does Dr. J. David Dudley & Associates accept new patients?",
@@ -118,15 +118,15 @@ export const qaItems: QaItem[] = [
     cta: "Call (905) 477-5825 to ask whether our Unionville office is the right fit for your family.",
   },
   {
-    slug: "best-dentist-markham",
+    slug: "markham-area-dental-office",
     category: "Choosing a dentist",
     title: "What Markham families should look for when choosing a dentist",
-    shortQuestion: "Who is the best dentist in Markham for family care?",
-    metaTitle: "Choosing a Dentist Near Markham and Unionville",
+    shortQuestion: "What should I look for in a Markham-area dental office?",
+    metaTitle: "Choosing a Markham-Area Dental Office",
     metaDescription:
       "A practical guide for Markham families comparing nearby dentists, including access, continuity, services, CDCP and first-visit expectations.",
     directAnswer:
-      "For Markham families, the best dentist is often a nearby clinic with reliable family care, clear treatment communication, accessible appointments, and a location that is easy to reach regularly. Dr. J. David Dudley & Associates is located on Highway 7 in Unionville and has served Unionville and Markham-area patients since 1980.",
+      "For Markham-area families, a practical dental office is usually close enough for regular visits, clear about first-visit expectations, able to see adults and children, and straightforward about insurance or CDCP questions. Dr. J. David Dudley & Associates is located on Highway 7 in Unionville and has served Unionville and Markham-area patients since 1980.",
     tldr: [
       "Choose a dentist close enough for routine hygiene visits and follow-up care.",
       "Compare service fit for adults, children, seniors, cosmetic concerns, and restorative needs.",

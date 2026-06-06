@@ -20,10 +20,10 @@ import { Route as CdcpRouteImport } from './routes/cdcp'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as QuestionsIndexRouteImport } from './routes/questions.index'
+import { Route as QuestionsMarkhamAreaDentalOfficeRouteImport } from './routes/questions/markham-area-dental-office'
 import { Route as QuestionsFirstDentalVisitUnionvilleRouteImport } from './routes/questions/first-dental-visit-unionville'
+import { Route as QuestionsChooseFamilyDentistUnionvilleRouteImport } from './routes/questions/choose-family-dentist-unionville'
 import { Route as QuestionsCdcpDentistUnionvilleRouteImport } from './routes/questions/cdcp-dentist-unionville'
-import { Route as QuestionsBestDentistUnionvilleRouteImport } from './routes/questions/best-dentist-unionville'
-import { Route as QuestionsBestDentistMarkhamRouteImport } from './routes/questions/best-dentist-markham'
 
 const VisitRoute = VisitRouteImport.update({
   id: '/visit',
@@ -80,28 +80,28 @@ const QuestionsIndexRoute = QuestionsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => QuestionsRoute,
 } as any)
+const QuestionsMarkhamAreaDentalOfficeRoute =
+  QuestionsMarkhamAreaDentalOfficeRouteImport.update({
+    id: '/markham-area-dental-office',
+    path: '/markham-area-dental-office',
+    getParentRoute: () => QuestionsRoute,
+  } as any)
 const QuestionsFirstDentalVisitUnionvilleRoute =
   QuestionsFirstDentalVisitUnionvilleRouteImport.update({
     id: '/first-dental-visit-unionville',
     path: '/first-dental-visit-unionville',
     getParentRoute: () => QuestionsRoute,
   } as any)
+const QuestionsChooseFamilyDentistUnionvilleRoute =
+  QuestionsChooseFamilyDentistUnionvilleRouteImport.update({
+    id: '/choose-family-dentist-unionville',
+    path: '/choose-family-dentist-unionville',
+    getParentRoute: () => QuestionsRoute,
+  } as any)
 const QuestionsCdcpDentistUnionvilleRoute =
   QuestionsCdcpDentistUnionvilleRouteImport.update({
     id: '/cdcp-dentist-unionville',
     path: '/cdcp-dentist-unionville',
-    getParentRoute: () => QuestionsRoute,
-  } as any)
-const QuestionsBestDentistUnionvilleRoute =
-  QuestionsBestDentistUnionvilleRouteImport.update({
-    id: '/best-dentist-unionville',
-    path: '/best-dentist-unionville',
-    getParentRoute: () => QuestionsRoute,
-  } as any)
-const QuestionsBestDentistMarkhamRoute =
-  QuestionsBestDentistMarkhamRouteImport.update({
-    id: '/best-dentist-markham',
-    path: '/best-dentist-markham',
     getParentRoute: () => QuestionsRoute,
   } as any)
 
@@ -116,10 +116,10 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/visit': typeof VisitRoute
-  '/questions/best-dentist-markham': typeof QuestionsBestDentistMarkhamRoute
-  '/questions/best-dentist-unionville': typeof QuestionsBestDentistUnionvilleRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
+  '/questions/choose-family-dentist-unionville': typeof QuestionsChooseFamilyDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
+  '/questions/markham-area-dental-office': typeof QuestionsMarkhamAreaDentalOfficeRoute
   '/questions/': typeof QuestionsIndexRoute
 }
 export interface FileRoutesByTo {
@@ -132,10 +132,10 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/visit': typeof VisitRoute
-  '/questions/best-dentist-markham': typeof QuestionsBestDentistMarkhamRoute
-  '/questions/best-dentist-unionville': typeof QuestionsBestDentistUnionvilleRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
+  '/questions/choose-family-dentist-unionville': typeof QuestionsChooseFamilyDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
+  '/questions/markham-area-dental-office': typeof QuestionsMarkhamAreaDentalOfficeRoute
   '/questions': typeof QuestionsIndexRoute
 }
 export interface FileRoutesById {
@@ -150,10 +150,10 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/visit': typeof VisitRoute
-  '/questions/best-dentist-markham': typeof QuestionsBestDentistMarkhamRoute
-  '/questions/best-dentist-unionville': typeof QuestionsBestDentistUnionvilleRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
+  '/questions/choose-family-dentist-unionville': typeof QuestionsChooseFamilyDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
+  '/questions/markham-area-dental-office': typeof QuestionsMarkhamAreaDentalOfficeRoute
   '/questions/': typeof QuestionsIndexRoute
 }
 export interface FileRouteTypes {
@@ -169,10 +169,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/visit'
-    | '/questions/best-dentist-markham'
-    | '/questions/best-dentist-unionville'
     | '/questions/cdcp-dentist-unionville'
+    | '/questions/choose-family-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
+    | '/questions/markham-area-dental-office'
     | '/questions/'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -185,10 +185,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/visit'
-    | '/questions/best-dentist-markham'
-    | '/questions/best-dentist-unionville'
     | '/questions/cdcp-dentist-unionville'
+    | '/questions/choose-family-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
+    | '/questions/markham-area-dental-office'
     | '/questions'
   id:
     | '__root__'
@@ -202,10 +202,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/visit'
-    | '/questions/best-dentist-markham'
-    | '/questions/best-dentist-unionville'
     | '/questions/cdcp-dentist-unionville'
+    | '/questions/choose-family-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
+    | '/questions/markham-area-dental-office'
     | '/questions/'
   fileRoutesById: FileRoutesById
 }
@@ -301,11 +301,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuestionsIndexRouteImport
       parentRoute: typeof QuestionsRoute
     }
+    '/questions/markham-area-dental-office': {
+      id: '/questions/markham-area-dental-office'
+      path: '/markham-area-dental-office'
+      fullPath: '/questions/markham-area-dental-office'
+      preLoaderRoute: typeof QuestionsMarkhamAreaDentalOfficeRouteImport
+      parentRoute: typeof QuestionsRoute
+    }
     '/questions/first-dental-visit-unionville': {
       id: '/questions/first-dental-visit-unionville'
       path: '/first-dental-visit-unionville'
       fullPath: '/questions/first-dental-visit-unionville'
       preLoaderRoute: typeof QuestionsFirstDentalVisitUnionvilleRouteImport
+      parentRoute: typeof QuestionsRoute
+    }
+    '/questions/choose-family-dentist-unionville': {
+      id: '/questions/choose-family-dentist-unionville'
+      path: '/choose-family-dentist-unionville'
+      fullPath: '/questions/choose-family-dentist-unionville'
+      preLoaderRoute: typeof QuestionsChooseFamilyDentistUnionvilleRouteImport
       parentRoute: typeof QuestionsRoute
     }
     '/questions/cdcp-dentist-unionville': {
@@ -315,37 +329,24 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuestionsCdcpDentistUnionvilleRouteImport
       parentRoute: typeof QuestionsRoute
     }
-    '/questions/best-dentist-unionville': {
-      id: '/questions/best-dentist-unionville'
-      path: '/best-dentist-unionville'
-      fullPath: '/questions/best-dentist-unionville'
-      preLoaderRoute: typeof QuestionsBestDentistUnionvilleRouteImport
-      parentRoute: typeof QuestionsRoute
-    }
-    '/questions/best-dentist-markham': {
-      id: '/questions/best-dentist-markham'
-      path: '/best-dentist-markham'
-      fullPath: '/questions/best-dentist-markham'
-      preLoaderRoute: typeof QuestionsBestDentistMarkhamRouteImport
-      parentRoute: typeof QuestionsRoute
-    }
   }
 }
 
 interface QuestionsRouteChildren {
-  QuestionsBestDentistMarkhamRoute: typeof QuestionsBestDentistMarkhamRoute
-  QuestionsBestDentistUnionvilleRoute: typeof QuestionsBestDentistUnionvilleRoute
   QuestionsCdcpDentistUnionvilleRoute: typeof QuestionsCdcpDentistUnionvilleRoute
+  QuestionsChooseFamilyDentistUnionvilleRoute: typeof QuestionsChooseFamilyDentistUnionvilleRoute
   QuestionsFirstDentalVisitUnionvilleRoute: typeof QuestionsFirstDentalVisitUnionvilleRoute
+  QuestionsMarkhamAreaDentalOfficeRoute: typeof QuestionsMarkhamAreaDentalOfficeRoute
   QuestionsIndexRoute: typeof QuestionsIndexRoute
 }
 
 const QuestionsRouteChildren: QuestionsRouteChildren = {
-  QuestionsBestDentistMarkhamRoute: QuestionsBestDentistMarkhamRoute,
-  QuestionsBestDentistUnionvilleRoute: QuestionsBestDentistUnionvilleRoute,
   QuestionsCdcpDentistUnionvilleRoute: QuestionsCdcpDentistUnionvilleRoute,
+  QuestionsChooseFamilyDentistUnionvilleRoute:
+    QuestionsChooseFamilyDentistUnionvilleRoute,
   QuestionsFirstDentalVisitUnionvilleRoute:
     QuestionsFirstDentalVisitUnionvilleRoute,
+  QuestionsMarkhamAreaDentalOfficeRoute: QuestionsMarkhamAreaDentalOfficeRoute,
   QuestionsIndexRoute: QuestionsIndexRoute,
 }
 

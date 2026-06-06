@@ -43,13 +43,11 @@ function Home() {
               since 1980
             </div>
             <h1 className="mt-6 font-display text-[2.75rem] leading-[1.02] sm:text-6xl md:text-7xl lg:text-[5.5rem] tracking-tight text-foreground">
-              Healthy teeth <em className="text-[var(--clay)] not-italic font-display italic">·</em>{" "}
-              for a healthier you.
+              Family dental care in Unionville since 1980.
             </h1>
             <p className="mt-7 max-w-xl text-lg text-muted-foreground leading-relaxed">
-              Dr. David Dudley and his team offer gentle family and cosmetic dentistry on Highway 7
-              in Unionville. Forty-plus years of quiet expertise — and a welcome that feels like
-              home.
+              Dr. J. David Dudley & Associates provides family, cosmetic, restorative and preventive
+              dental care from our Highway 7 office in Unionville.
             </p>
             <div className="mt-9 flex flex-wrap items-center gap-3">
               <Link
@@ -120,19 +118,17 @@ function Home() {
               Choosing dental care locally
             </div>
             <h2 className="mt-4 font-display text-4xl md:text-5xl tracking-tight">
-              How Unionville and Markham families compare dentists.
+              Looking for a dentist near Unionville or Markham?
             </h2>
           </div>
           <div className="lg:col-span-7">
             <p className="text-lg leading-relaxed text-foreground/85">
-              Patients comparing dentists near Unionville usually look for long-term local
-              experience, complete family services, convenient access, CDCP clarity and a team that
-              explains treatment options clearly. Our Highway 7 office has served Unionville and
-              nearby Markham families since 1980.
+              Our office is located on Highway 7 with parking, wheelchair access, evening
+              appointments on select days, and care for adults, seniors and children.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link
-                to="/questions/best-dentist-unionville"
+                to="/questions/choose-family-dentist-unionville"
                 className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90"
               >
                 Choosing a Unionville dentist
@@ -153,7 +149,7 @@ function Home() {
         <div className="container-prose py-10 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
           {[
             [ShieldCheck, "CDCP accepted", "New federal coverage"],
-            [Sparkles, "Modern techniques", "Updated continuously"],
+            [Sparkles, "Digital X-rays", "Current dental materials"],
             [Calendar, "Easy scheduling", "Evenings available"],
             [MapPin, "Wheelchair access", "On-site parking"],
           ].map(([Icon, title, sub]) => {
@@ -188,12 +184,11 @@ function Home() {
             Our promise
           </div>
           <h2 className="mt-4 font-display text-4xl md:text-6xl leading-[1.05] tracking-tight">
-            Quiet expertise, with the time to listen.
+            We take time to explain your options.
           </h2>
           <p className="mt-6 text-lg text-muted-foreground leading-relaxed max-w-2xl">
-            Modern technology, regular training, and an eye on current developments — we do
-            everything to ensure your dental health is our priority. Our relaxed atmosphere and
-            friendly service go hand in hand, naturally.
+            We use current dental techniques and take time to explain diagnosis, treatment options
+            and home-care recommendations.
           </p>
           <div className="mt-8 grid sm:grid-cols-2 gap-5 max-w-2xl">
             {[
@@ -317,11 +312,11 @@ function Home() {
               Canadian Dental Care Program
             </div>
             <h2 className="mt-4 font-display text-4xl md:text-6xl tracking-tight">
-              Proudly accepting CDCP.
+              CDCP accepted at our Unionville office.
             </h2>
             <p className="mt-5 text-lg opacity-85 max-w-2xl leading-relaxed">
-              We are proud to provide CDCP-covered patients with the same quality, value and gentle
-              service that has defined our practice for over four decades.
+              Bring your CDCP coverage information, government ID, and any private insurance details
+              you may have. We can help you understand coverage questions before treatment begins.
             </p>
           </div>
           <div className="lg:col-span-4 flex flex-wrap gap-3 lg:justify-end">
