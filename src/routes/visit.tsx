@@ -2,6 +2,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Section";
 import { PracticeAddressLink } from "@/components/site/AddressLink";
 import { PRACTICE_ADDRESS, PRACTICE_MAP_EMBED_URL, PRACTICE_MAPS_URL } from "@/lib/practice-info";
+import { breadcrumbSchema, ldJsonScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/visit")({
   head: () => ({
@@ -14,6 +15,14 @@ export const Route = createFileRoute("/visit")({
       },
       { property: "og:title", content: "Visit Us — Unionville Dentist" },
       { property: "og:description", content: "Hours, directions, parking and payment options." },
+    ],
+    scripts: [
+      ldJsonScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Visit", path: "/visit" },
+        ]),
+      ),
     ],
   }),
   component: Visit,

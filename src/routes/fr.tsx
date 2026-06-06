@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Section";
 import { PracticeAddressLink } from "@/components/site/AddressLink";
+import { breadcrumbSchema, ldJsonScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/fr")({
   head: () => ({
@@ -22,6 +23,14 @@ export const Route = createFileRoute("/fr")({
       { rel: "alternate", hrefLang: "en", href: "/" },
       { rel: "alternate", hrefLang: "zh-Hans", href: "/zh" },
       { rel: "alternate", hrefLang: "fr", href: "/fr" },
+    ],
+    scripts: [
+      ldJsonScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Information en français", path: "/fr" },
+        ]),
+      ),
     ],
   }),
   component: FrenchInfo,

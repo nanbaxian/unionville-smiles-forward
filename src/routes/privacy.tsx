@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader, Prose } from "@/components/site/Section";
+import { breadcrumbSchema, ldJsonScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -15,6 +16,14 @@ export const Route = createFileRoute("/privacy")({
         property: "og:description",
         content: "How our Unionville dental office handles website inquiries and patient privacy.",
       },
+    ],
+    scripts: [
+      ldJsonScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Privacy", path: "/privacy" },
+        ]),
+      ),
     ],
   }),
   component: Privacy,

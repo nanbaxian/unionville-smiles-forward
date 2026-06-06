@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Section";
 import { FileText, Clock, ListChecks } from "lucide-react";
+import { absoluteUrl, breadcrumbSchema, ldJsonScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/new-patients")({
   head: () => ({
@@ -16,6 +17,33 @@ export const Route = createFileRoute("/new-patients")({
         property: "og:description",
         content: "What to expect on your first visit, plus our new-patient intake form.",
       },
+    ],
+    scripts: [
+      ldJsonScript({
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        "@id": absoluteUrl("/new-patients#webpage"),
+        name: "New Patient Information",
+        url: absoluteUrl("/new-patients"),
+        about: {
+          "@id": absoluteUrl("/#dentist"),
+        },
+        mainEntity: {
+          "@type": "MedicalClinic",
+          "@id": absoluteUrl("/#dentist"),
+          name: "Dr. J. David Dudley & Associates",
+          medicalSpecialty: "Dentistry",
+        },
+        audience: {
+          "@type": "Patient",
+        },
+      }),
+      ldJsonScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "New Patients", path: "/new-patients" },
+        ]),
+      ),
     ],
   }),
   component: NewPatients,

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { AddressLink } from "@/components/site/AddressLink";
 import { PageHeader, Prose } from "@/components/site/Section";
+import { breadcrumbSchema, ldJsonScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/accessibility")({
   head: () => ({
@@ -16,6 +17,14 @@ export const Route = createFileRoute("/accessibility")({
         property: "og:description",
         content: "Website and office accessibility information for Unionville dental patients.",
       },
+    ],
+    scripts: [
+      ldJsonScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Accessibility", path: "/accessibility" },
+        ]),
+      ),
     ],
   }),
   component: Accessibility,

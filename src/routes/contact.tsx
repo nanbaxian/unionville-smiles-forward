@@ -3,6 +3,7 @@ import { useState } from "react";
 import { PageHeader } from "@/components/site/Section";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { PRACTICE_ADDRESS, PRACTICE_MAPS_URL } from "@/lib/practice-info";
+import { breadcrumbSchema, ldJsonScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -18,6 +19,14 @@ export const Route = createFileRoute("/contact")({
         property: "og:description",
         content: "Call, email, or send a message to book your appointment.",
       },
+    ],
+    scripts: [
+      ldJsonScript(
+        breadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ]),
+      ),
     ],
   }),
   component: Contact,
