@@ -4,7 +4,6 @@ import {
   createRootRouteWithContext,
   useRouter,
   HeadContent,
-  Scripts,
 } from "@tanstack/react-router";
 import { type ReactNode } from "react";
 
@@ -109,10 +108,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
-        {children}
-        <Scripts />
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

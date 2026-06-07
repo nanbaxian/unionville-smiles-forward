@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, Phone } from "lucide-react";
 import logoImg100 from "@/assets/unionvilledental/logo-100.webp";
 import logoImg142 from "@/assets/unionvilledental/logo-142.webp";
 
@@ -17,7 +16,6 @@ const nav = [
 ];
 
 export function SiteHeader() {
-  const [open, setOpen] = useState(false);
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur-md">
       <div className="container-prose flex h-16 items-center justify-between">
@@ -62,48 +60,38 @@ export function SiteHeader() {
           >
             Book a visit
           </Link>
-          <button
-            aria-label="Menu"
-            className="lg:hidden p-2 -mr-2"
-            onClick={() => setOpen((v) => !v)}
-          >
-            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-          </button>
+          <details className="lg:hidden">
+            <summary
+              aria-label="Menu"
+              className="-mr-2 list-none cursor-pointer p-2 [&::-webkit-details-marker]:hidden"
+            >
+              <Menu className="h-5 w-5" />
+            </summary>
+            <div className="absolute left-0 right-0 top-16 border-t border-border bg-background">
+              <nav className="container-prose flex flex-col gap-1 py-4">
+                {nav.map((n) => (
+                  <Link
+                    key={n.to}
+                    to={n.to}
+                    className="py-2 text-base text-foreground/80 hover:text-foreground"
+                  >
+                    {n.label}
+                  </Link>
+                ))}
+                <a href="tel:9054775825" className="py-2 text-base font-medium">
+                  (905) 477-5825
+                </a>
+                <Link to="/zh" className="py-2 text-base text-foreground/80 hover:text-foreground">
+                  中文信息
+                </Link>
+                <Link to="/fr" className="py-2 text-base text-foreground/80 hover:text-foreground">
+                  Information en français
+                </Link>
+              </nav>
+            </div>
+          </details>
         </div>
       </div>
-      {open && (
-        <div className="lg:hidden border-t border-border bg-background">
-          <nav className="container-prose flex flex-col gap-1 py-4">
-            {nav.map((n) => (
-              <Link
-                key={n.to}
-                to={n.to}
-                onClick={() => setOpen(false)}
-                className="py-2 text-base text-foreground/80 hover:text-foreground"
-              >
-                {n.label}
-              </Link>
-            ))}
-            <a href="tel:9054775825" className="py-2 text-base font-medium">
-              (905) 477-5825
-            </a>
-            <Link
-              to="/zh"
-              onClick={() => setOpen(false)}
-              className="py-2 text-base text-foreground/80 hover:text-foreground"
-            >
-              中文信息
-            </Link>
-            <Link
-              to="/fr"
-              onClick={() => setOpen(false)}
-              className="py-2 text-base text-foreground/80 hover:text-foreground"
-            >
-              Information en français
-            </Link>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }
