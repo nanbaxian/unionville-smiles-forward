@@ -51,7 +51,6 @@ export function practiceSchema() {
     image: absoluteUrl(logoImg),
     logo: absoluteUrl(logoImg),
     telephone: "+1-905-477-5825",
-    email: "drdudley@bellnet.ca",
     priceRange: "$$",
     paymentAccepted: ["Cash", "Debit Card", "Mastercard", "Visa", "CDCP"],
     acceptsInsurance: "Canadian Dental Care Program (CDCP)",

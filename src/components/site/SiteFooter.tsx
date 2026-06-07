@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Languages, MapPin, Phone, ShieldCheck } from "lucide-react";
+import { Languages, Mail, MapPin, Phone, ShieldCheck } from "lucide-react";
 import logoImg100 from "@/assets/unionvilledental/logo-100.webp";
 import logoImg142 from "@/assets/unionvilledental/logo-142.webp";
 import { PracticeAddressLink } from "@/components/site/AddressLink";
@@ -72,10 +72,13 @@ export function SiteFooter() {
                   <a href="tel:9054775825" className="block hover:text-white">
                     (905) 477-5825
                   </a>
-                  <a href="mailto:drdudley@bellnet.ca" className="mt-2 block hover:text-white">
-                    drdudley@bellnet.ca
-                  </a>
                 </div>
+              </div>
+              <div className="flex gap-3">
+                <Mail className="mt-0.5 h-4 w-4 shrink-0 text-white/50" />
+                <Link to="/contact" className="hover:text-white">
+                  Email the office
+                </Link>
               </div>
               <p>
                 Mon-Tue 8am-7pm
