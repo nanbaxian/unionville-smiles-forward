@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Section";
 import { PracticeAddressLink } from "@/components/site/AddressLink";
-import { breadcrumbSchema, ldJsonScript } from "@/lib/schema";
+import { breadcrumbSchema, languageAlternateLinks, ldJsonScript } from "@/lib/schema";
 
 export const Route = createFileRoute("/fr")({
   head: () => ({
@@ -19,11 +19,7 @@ export const Route = createFileRoute("/fr")({
           "Information de base en français pour les patients de notre clinique dentaire à Unionville.",
       },
     ],
-    links: [
-      { rel: "alternate", hrefLang: "en", href: "/" },
-      { rel: "alternate", hrefLang: "zh-Hans", href: "/zh" },
-      { rel: "alternate", hrefLang: "fr", href: "/fr" },
-    ],
+    links: languageAlternateLinks(),
     scripts: [
       ldJsonScript(
         breadcrumbSchema([

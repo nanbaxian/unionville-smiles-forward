@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHeader } from "@/components/site/Section";
 import { PracticeAddressLink } from "@/components/site/AddressLink";
+import { languageAlternateLinks } from "@/lib/schema";
 
 export const Route = createFileRoute("/zh")({
   head: () => ({
@@ -20,11 +21,7 @@ export const Route = createFileRoute("/zh")({
         content: "Dr. J. David Dudley & Associates 的中文患者信息页面。",
       },
     ],
-    links: [
-      { rel: "alternate", hrefLang: "en", href: "/" },
-      { rel: "alternate", hrefLang: "zh-Hans", href: "/zh" },
-      { rel: "alternate", hrefLang: "fr", href: "/fr" },
-    ],
+    links: languageAlternateLinks(),
     scripts: [
       {
         type: "application/ld+json",

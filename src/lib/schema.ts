@@ -25,6 +25,15 @@ export function absoluteUrl(path = "/") {
   return `${SITE_URL}${path.startsWith("/") ? path : `/${path}`}`;
 }
 
+export function languageAlternateLinks() {
+  return [
+    { rel: "alternate", hrefLang: "en", href: absoluteUrl("/") },
+    { rel: "alternate", hrefLang: "zh-Hans", href: absoluteUrl("/zh") },
+    { rel: "alternate", hrefLang: "fr", href: absoluteUrl("/fr") },
+    { rel: "alternate", hrefLang: "x-default", href: absoluteUrl("/") },
+  ];
+}
+
 export function ldJsonScript(schema: unknown) {
   return {
     type: "application/ld+json",

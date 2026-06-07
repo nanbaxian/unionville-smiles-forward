@@ -9,7 +9,12 @@ import xrayImg from "@/assets/photos/technology/dental-xray-review.webp";
 import implantImg from "@/assets/photos/services/implant-model.webp";
 import { ArrowUpRight, Calendar, Clock, MapPin, ShieldCheck, Sparkles } from "lucide-react";
 import { PracticeAddressLink } from "@/components/site/AddressLink";
-import { breadcrumbSchema, faqPageSchema, ldJsonScript } from "@/lib/schema";
+import {
+  breadcrumbSchema,
+  faqPageSchema,
+  languageAlternateLinks,
+  ldJsonScript,
+} from "@/lib/schema";
 
 const homeFaqs = [
   {
@@ -57,11 +62,7 @@ export const Route = createFileRoute("/")({
         content: "Trusted family dentistry in Unionville since 1980. New patients welcome.",
       },
     ],
-    links: [
-      { rel: "alternate", hrefLang: "en", href: "/" },
-      { rel: "alternate", hrefLang: "zh-Hans", href: "/zh" },
-      { rel: "alternate", hrefLang: "fr", href: "/fr" },
-    ],
+    links: languageAlternateLinks(),
     scripts: [
       {
         type: "application/ld+json",
