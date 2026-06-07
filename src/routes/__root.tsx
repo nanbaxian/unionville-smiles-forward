@@ -7,7 +7,7 @@ import {
 } from "@tanstack/react-router";
 import { type ReactNode } from "react";
 
-import appCss from "../styles.css?url";
+import appCss from "../styles.css?inline";
 import { SiteHeader } from "../components/site/SiteHeader";
 import { SiteFooter } from "../components/site/SiteFooter";
 import { ldJsonScript, practiceSchema } from "@/lib/schema";
@@ -93,7 +93,7 @@ export const Route = createRootRouteWithContext()({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    styles: [{ children: appCss }],
     scripts: [ldJsonScript(practiceSchema())],
   }),
   shellComponent: RootShell,
