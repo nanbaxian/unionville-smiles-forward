@@ -49,12 +49,6 @@ export function SiteHeader() {
             <Phone className="h-4 w-4" /> (905) 477-5825
           </a>
           <Link
-            to="/zh"
-            className="hidden sm:inline-flex px-2 py-2 text-sm font-medium text-foreground hover:text-primary"
-          >
-            中文
-          </Link>
-          <Link
             to="/contact"
             className="hidden sm:inline-flex items-center rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition"
           >
@@ -81,9 +75,6 @@ export function SiteHeader() {
                 <a href="tel:9054775825" className="py-2 text-base font-medium">
                   (905) 477-5825
                 </a>
-                <Link to="/zh" className="py-2 text-base text-foreground/80 hover:text-foreground">
-                  中文信息
-                </Link>
                 <Link to="/fr" className="py-2 text-base text-foreground/80 hover:text-foreground">
                   Information en français
                 </Link>

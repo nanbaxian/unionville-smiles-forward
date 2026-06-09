@@ -9,7 +9,6 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ZhRouteImport } from './routes/zh'
 import { Route as VisitRouteImport } from './routes/visit'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
@@ -30,11 +29,6 @@ import { Route as QuestionsFirstDentalVisitUnionvilleRouteImport } from './route
 import { Route as QuestionsChooseFamilyDentistUnionvilleRouteImport } from './routes/questions/choose-family-dentist-unionville'
 import { Route as QuestionsCdcpDentistUnionvilleRouteImport } from './routes/questions/cdcp-dentist-unionville'
 
-const ZhRoute = ZhRouteImport.update({
-  id: '/zh',
-  path: '/zh',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const VisitRoute = VisitRouteImport.update({
   id: '/visit',
   path: '/visit',
@@ -150,7 +144,6 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/visit': typeof VisitRoute
-  '/zh': typeof ZhRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
   '/questions/choose-family-dentist-unionville': typeof QuestionsChooseFamilyDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
@@ -171,7 +164,6 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/visit': typeof VisitRoute
-  '/zh': typeof ZhRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
   '/questions/choose-family-dentist-unionville': typeof QuestionsChooseFamilyDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
@@ -194,7 +186,6 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/visit': typeof VisitRoute
-  '/zh': typeof ZhRoute
   '/questions/cdcp-dentist-unionville': typeof QuestionsCdcpDentistUnionvilleRoute
   '/questions/choose-family-dentist-unionville': typeof QuestionsChooseFamilyDentistUnionvilleRoute
   '/questions/first-dental-visit-unionville': typeof QuestionsFirstDentalVisitUnionvilleRoute
@@ -218,7 +209,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/visit'
-    | '/zh'
     | '/questions/cdcp-dentist-unionville'
     | '/questions/choose-family-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
@@ -239,7 +229,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/visit'
-    | '/zh'
     | '/questions/cdcp-dentist-unionville'
     | '/questions/choose-family-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
@@ -261,7 +250,6 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/visit'
-    | '/zh'
     | '/questions/cdcp-dentist-unionville'
     | '/questions/choose-family-dentist-unionville'
     | '/questions/first-dental-visit-unionville'
@@ -284,18 +272,10 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TeamRoute: typeof TeamRoute
   VisitRoute: typeof VisitRoute
-  ZhRoute: typeof ZhRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/zh': {
-      id: '/zh'
-      path: '/zh'
-      fullPath: '/zh'
-      preLoaderRoute: typeof ZhRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/visit': {
       id: '/visit'
       path: '/visit'
@@ -469,7 +449,6 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TeamRoute: TeamRoute,
   VisitRoute: VisitRoute,
-  ZhRoute: ZhRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

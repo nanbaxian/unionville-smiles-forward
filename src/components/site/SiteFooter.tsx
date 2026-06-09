@@ -45,12 +45,6 @@ export function SiteFooter() {
             </p>
             <div className="mt-5 flex flex-wrap gap-2" aria-label="Language resources">
               <Link
-                to="/zh"
-                className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/15 px-4 text-sm text-white/85 hover:bg-white/10"
-              >
-                <Languages className="h-4 w-4" /> 中文
-              </Link>
-              <Link
                 to="/fr"
                 className="inline-flex min-h-10 items-center gap-2 rounded-full border border-white/15 px-4 text-sm text-white/85 hover:bg-white/10"
               >

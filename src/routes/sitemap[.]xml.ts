@@ -15,7 +15,6 @@ const routes = [
   { path: "/questions/first-dental-visit-unionville", priority: "0.8" },
   { path: "/new-patients", priority: "0.8" },
   { path: "/cdcp", priority: "0.8" },
-  { path: "/zh", priority: "0.8" },
   { path: "/fr", priority: "0.6" },
   { path: "/patient-rights", priority: "0.7" },
   { path: "/visit", priority: "0.7" },

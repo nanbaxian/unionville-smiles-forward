@@ -28,7 +28,6 @@ export function absoluteUrl(path = "/") {
 export function languageAlternateLinks() {
   return [
     { rel: "alternate", hrefLang: "en", href: absoluteUrl("/") },
-    { rel: "alternate", hrefLang: "zh-Hans", href: absoluteUrl("/zh") },
     { rel: "alternate", hrefLang: "fr", href: absoluteUrl("/fr") },
     { rel: "alternate", hrefLang: "x-default", href: absoluteUrl("/") },
   ];
@@ -54,7 +53,7 @@ export function practiceSchema() {
     priceRange: "$$",
     paymentAccepted: ["Cash", "Debit Card", "Mastercard", "Visa", "CDCP"],
     acceptsInsurance: "Canadian Dental Care Program (CDCP)",
-    knowsLanguage: ["English", "Chinese", "French"],
+    knowsLanguage: ["English", "French"],
     medicalSpecialty: "Dentistry",
     address: {
       "@type": "PostalAddress",

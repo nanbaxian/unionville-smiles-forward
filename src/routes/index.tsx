@@ -33,11 +33,6 @@ const homeFaqs = [
       "The office is located at 4359 Highway #7, Unionville, ON L3R 1M1, serving Unionville and nearby Markham families.",
   },
   {
-    question: "Is Chinese-language help available?",
-    answer:
-      "A Chinese information page is available for local Markham and Unionville patients. Patients can call the office to ask about language support before booking.",
-  },
-  {
     question: "How can patients verify Ontario dental registration or make a concern known?",
     answer:
       "Patients can use the Royal College of Dental Surgeons of Ontario public register to verify Ontario dentists and can review the RCDSO complaints and investigations process for concerns.",
@@ -368,12 +363,6 @@ function Home() {
               ))}
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                to="/zh"
-                className="rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:border-primary/50"
-              >
-                中文信息
-              </Link>
               <Link
                 to="/fr"
                 className="rounded-full border border-border px-5 py-2.5 text-sm font-medium text-foreground hover:border-primary/50"
